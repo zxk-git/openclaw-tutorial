@@ -1,0 +1,6 @@
+# OpenClaw Tutorial Auto
+.automation-report.md
+.task-logs/
+__pycache__/
+*.pyc
+.DS_Store
