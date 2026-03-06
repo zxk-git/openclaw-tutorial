@@ -4,7 +4,7 @@
 
 **从零到精通的 OpenClaw Agent 自动化开发指南**
 
-[![Chapters](https://img.shields.io/badge/chapters-13-blue?style=flat-square)](.) [![Words](https://img.shields.io/badge/words-35%2C000%2B-green?style=flat-square)](.) [![Quality](https://img.shields.io/badge/quality-98.1%2F100-brightgreen?style=flat-square)](.) [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](LICENSE) [![Auto Updated](https://img.shields.io/badge/auto--updated-24%2F7-purple?style=flat-square)](.)
+[![Chapters](https://img.shields.io/badge/chapters-20-blue?style=flat-square)](OUTLINE.md) [![Words](https://img.shields.io/badge/words-35%2C000%2B-green?style=flat-square)](.) [![Quality](https://img.shields.io/badge/quality-98.1%2F100-brightgreen?style=flat-square)](.) [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](LICENSE) [![Auto Updated](https://img.shields.io/badge/auto--updated-24%2F7-purple?style=flat-square)](.)
 
 *本教程由 AI Agent 自动生成、持续优化，覆盖 OpenClaw 安装部署、Skills 开发、自动化集成到企业级实战的完整知识体系。*
 
@@ -16,11 +16,14 @@
 
 | 读者类型 | 推荐路径 |
 |----------|---------|
-| **新手入门** | 从第 1 章开始，按顺序阅读 |
-| **有基础** | 直接跳到第 6 章（自动化）或第 7 章（飞书集成） |
-| **高级用户** | 第 8 章（多 Agent）、第 11 章（第三方集成）、第 12 章（实战案例） |
+| **新手入门** | 第 1-5 章：基础入门篇 |
+| **有基础** | 第 6-10 章：核心能力篇（自动化 / 飞书 / 多Agent） |
+| **高级用户** | 第 11-15 章：高级进阶篇（安全 / Memory / MCP） |
+| **专家实战** | 第 16-20 章：专家篇（浏览器自动化 / 企业部署 / 生态） |
 
 ## 📚 章节目录
+
+### 第一部分：基础入门
 
 | # | 章节 | 难度 | 简介 |
 |---|------|------|------|
@@ -29,14 +32,38 @@
 | 03 | [Skills 插件体系与批量开发](03-Skills%20插件体系与批量开发.md) | ⭐⭐ | Skill 结构、SKILL.md 规范、批量开发实践 |
 | 04 | [Skills 安装与管理实践](04-Skills%20安装与管理实践.md) | ⭐⭐ | ClawdHub 安装、版本管理、依赖排查 |
 | 05 | [ClawHub 平台与技能分发](05-ClawHub%20平台与技能分发.md) | ⭐⭐ | ClawHub 生态、发布与分发、社区协作 |
+
+### 第二部分：核心能力
+
+| # | 章节 | 难度 | 简介 |
+|---|------|------|------|
 | 06 | [自动化命令与脚本集成](06-自动化命令与脚本集成.md) | ⭐⭐⭐ | CLI 工具、Hook 系统、Cron 调度 |
 | 07 | [飞书集成与消息自动化](07-飞书集成与消息自动化.md) | ⭐⭐⭐ | 飞书 App 配置、消息收发、群聊自动化 |
 | 08 | [单 Gateway 多 Agent 配置](08-单%20Gateway%20多%20Agent%20配置与管理.md) | ⭐⭐⭐ | 多 Agent 架构、会话路由、资源隔离 |
 | 09 | [故障排查与日志分析](09-故障排查与日志分析.md) | ⭐⭐ | 日志体系、常见故障、诊断工具 |
 | 10 | [持续集成与知识库同步](10-持续集成与知识库同步.md) | ⭐⭐⭐ | CI/CD 集成、知识库管理、自动同步 |
+
+### 第三部分：高级进阶
+
+| # | 章节 | 难度 | 简介 |
+|---|------|------|------|
 | 11 | [高级场景：第三方平台集成](11-高级场景-第三方平台集成.md) | ⭐⭐⭐⭐ | GitHub/Notion/Telegram/Discord 集成 |
 | 12 | [实践案例与常见问题](12-实践案例与常见问题.md) | ⭐⭐⭐ | 知识助手、监控机器人、全链路自动化案例 |
 | 13 | [教程自动更新与仓库维护](13-教程自动更新与仓库维护.md) | ⭐⭐ | 自动化维护、Cron 任务、持续优化 |
+| 14 | 安全与权限管理 | ⭐⭐⭐ | Credential 管理、执行审批、沙箱隔离 |
+| 15 | Memory 记忆系统深入 | ⭐⭐⭐ | 短期/长期记忆、跨会话持久化、检索机制 |
+
+### 第四部分：专家实战
+
+| # | 章节 | 难度 | 简介 |
+|---|------|------|------|
+| 16 | MCP 工具协议与自定义集成 | ⭐⭐⭐⭐ | MCP 规范、自定义 Server 开发、工具注册 |
+| 17 | 浏览器自动化与网页交互 | ⭐⭐⭐ | Browser Relay、网页抓取、表单自动化 |
+| 18 | 性能优化与规模化部署 | ⭐⭐⭐⭐ | Token 优化、并发管理、监控告警 |
+| 19 | 团队协作与企业部署 | ⭐⭐⭐ | 多用户权限、私有化部署、安全合规 |
+| 20 | OpenClaw 生态与未来展望 | ⭐⭐ | 开源生态、社区贡献、行业趋势 |
+
+> 📋 **[查看完整大纲（含子节与练习）](OUTLINE.md)**
 
 ## 🚀 快速开始
 
