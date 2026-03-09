@@ -511,6 +511,39 @@ openclaw agents list --verbose
 
 ---
 
+
+## 最新动态与补充
+
+> 📅 更新时间: 2026-03-09
+
+### 补充 1
+
+OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using agents for multi-step task execution. It operates as a multi-agent system, allowing multiple agents to manage different channels and tasks. It is designed for always-on, scalable AI agent deployments.
+
+### 补充 2
+
+- **Understanding OpenClaw: A Comprehensive Guide to the Multi ...** (relevance: 81%)
+  https://medium.com/@ozbillwang/understanding-openclaw-a-comprehensive-guide-to-the-multi-channel-ai-gateway-ad8857cd1121
+  [Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2
+
+### 补充 3
+
+- **Multi-Agent Routing - OpenClaw** (relevance: 75%)
+  https://docs.openclaw.ai/concepts/multi-agent
+  [Skip to main content](https://docs.openclaw.ai/concepts/multi-agent#content-area). *   [Agent Runtime](https://docs.openclaw.ai/concepts/agent). *   [Agent Loop](https://docs.openclaw.ai/concepts
+
+### 补充 4
+
+- **Proposal for a Multimodal Multi-Agent System Using OpenClaw** (relevance: 74%)
+  https://medium.com/@gwrx2005/proposal-for-a-multimodal-multi-agent-system-using-openclaw-81f5e4488233
+  The Gateway component continuously runs and binds to all configured channels (chat platforms or other input sou
+
+### 补充 5
+
+- **Run Multiple OpenClaw AI Agents with Elastic Scaling and Safe ...** (relevance: 71%)
+  https://www.digitalocean.com/blog/openclaw-digitalocean-app-platform
+  ## OpenClaw on App Platform: Built for always-on, multi-agent AI systems. For those teams, OpenClaw on DigitalOcean App Platform is the so
+
 ## 本章小结
 
 - **单 Gateway 多 Agent 架构** 是 OpenClaw 实现多角色协作和多项目隔离的核心能力。
