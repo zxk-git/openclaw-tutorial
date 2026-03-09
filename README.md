@@ -4,7 +4,7 @@
 
 **从零到精通的 OpenClaw Agent 自动化开发指南**
 
-[![Chapters](https://img.shields.io/badge/chapters-21-blue?style=flat-square)](OUTLINE.md) [![Words](https://img.shields.io/badge/words-35%2C000%2B-green?style=flat-square)](.) [![Quality](https://img.shields.io/badge/quality-98.1%2F100-brightgreen?style=flat-square)](.) [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](LICENSE) [![Auto Updated](https://img.shields.io/badge/auto--updated-24%2F7-purple?style=flat-square)](.)
+[![Chapters](https://img.shields.io/badge/chapters-21-blue?style=flat-square)](OUTLINE.md) [![Words](https://img.shields.io/badge/words-35%2C000%2B-green?style=flat-square)](.) [![Quality](https://img.shields.io/badge/quality-98.1%2F100-brightgreen?style=flat-square)](.) [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](LICENSE) [![Auto Updated](https://img.shields.io/badge/auto--updated-24%2F7-purple?style=flat-square)](.) [![Git Auto-Push](https://img.shields.io/badge/git--push-auto-blueviolet?style=flat-square)](.)
 
 *本教程由 AI Agent 自动生成、持续优化，覆盖 OpenClaw 安装部署、Skills 开发、自动化集成到企业级实战的完整知识体系。*
 
