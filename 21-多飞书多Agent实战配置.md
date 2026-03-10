@@ -579,6 +579,39 @@ openclaw agents  # 确认 Routing 行显示正确的绑定
 
 ---
 
+
+## 最新动态与补充
+
+> 📅 更新时间: 2026-03-10
+
+### 补充 1
+
+OpenClaw integrates with Feishu for multi-bot collaboration, using appId/appSecret for setup. Feishu tasks include document, message, and calendar management. Use `npm install -g @openclaw/plugin-feishu` to install the plugin.
+
+### 补充 2
+
+- **OpenClaw Feishu Multi-Agent Deploy |... - LobeHub** (relevance: 100%)
+  https://lobehub.com/skills/seaworld008-blackbeard-fleet-openclaw-feishu-multi-agent-deploy
+  # OpenClaw Feishu Multi-Agent Deploy. OpenClaw Feishu Multi-Agent Deploy is a deployment and troubleshooting skill for integrating
+
+### 补充 3
+
+- **openclaw-feishu-multi-agent-deploy |... - LobeHub** (relevance: 100%)
+  https://lobehub.com/fr/skills/seaworld008-blackbeard-fleet-openclaw-feishu-multi-agent-deploy
+  # openclaw-feishu-multi-agent-deploy. OpenClaw Feishu Multi-Agent Deploy is a deployment and troubleshooting skill for integrati
+
+### 补充 4
+
+- **OpenClaw (Clawdbot)--ModelArk-Byteplus** (relevance: 100%)
+  https://docs.byteplus.com/en/docs/ModelArk/2183190
+  The key configuration for integrating tools are as follows:. Do not use the Base model URL (https://ark.ap-southeast.bytepluses.com/api/v3). | Model/auth provider | Select "Skip for
+
+### 补充 5
+
+- **Feishu Agent Relay - Multi-Bot Collaboration — AI Skill — Termo** (relevance: 100%)
+  https://termo.ai/skills/feishu-agent-relay
+  Enables multi-Agent collaboration on Feishu by relaying tasks between coordinator and specialist Bots with user ID mapping and proactive messaging. | Mode | For | Us
+
 ## 本章小结
 
 本章通过真实部署实例，完整演示了多飞书多Agent架构的配置过程：
