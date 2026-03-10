@@ -1,6 +1,6 @@
 # OpenClaw 实战教程 · 完整大纲
 
-> **版本**: v3.0 | **章节数**: 20 | **目标**: 从零到精通，覆盖 OpenClaw 全能力域
+> **版本**: v4.0 | **章节数**: 21 + Skills 教程 | **目标**: 从零到精通，覆盖 OpenClaw 全能力域
 >
 > 子节标记说明：📖 理论讲解 | 💻 实战操作 | 🧪 练习任务
 
@@ -226,3 +226,41 @@
 - C. Skill 开发模板（Python / Node.js / Shell）
 - D. 常用第三方集成配置速查
 - E. 术语表
+
+---
+
+## 实战专题
+
+21. 多飞书多Agent实战配置
+    - 💻 多飞书 App 配置：独立应用创建与权限分配
+    - 💻 独立 Agent 创建：每个飞书 App 对应独立 Agent
+    - 💻 路由绑定：消息路由规则配置
+    - 💻 工作空间隔离：Agent 间数据隔离策略
+    - 🧪 练习：配置 2 个飞书 App + 2 个独立 Agent
+
+---
+
+## Skills 安装与使用教程（skills-tutorials/）
+
+独立教程集合，覆盖全部 18 个已安装 Skills：
+
+| # | Skill | 教程文件 |
+|---|-------|---------|
+| 01 | McPorter（MCP 工具 CLI） | `skills-tutorials/01-mcporter.md` |
+| 02 | Complex Task Automator（任务自动化） | `skills-tutorials/02-complex-task-automator.md` |
+| 03 | DDG Web Search（DuckDuckGo 搜索） | `skills-tutorials/03-ddg-web-search.md` |
+| 04 | Exa Web Search（AI 神经搜索） | `skills-tutorials/04-exa-web-search.md` |
+| 05 | File Search（fd + ripgrep） | `skills-tutorials/05-file-search.md` |
+| 06 | Find Skills（技能发现） | `skills-tutorials/06-find-skills.md` |
+| 07 | GitHub（gh CLI 集成） | `skills-tutorials/07-github.md` |
+| 08 | GoG（Google Workspace CLI） | `skills-tutorials/08-gog.md` |
+| 09 | Markdown Converter（多格式转 MD） | `skills-tutorials/09-markdown-converter.md` |
+| 10 | Memory（无限分类记忆） | `skills-tutorials/10-memory.md` |
+| 11 | Multi Search Engine（17 引擎集成） | `skills-tutorials/11-multi-search-engine.md` |
+| 12 | Notion（Notion API 集成） | `skills-tutorials/12-notion.md` |
+| 13 | PowerPoint PPTX（PPT 自动化） | `skills-tutorials/13-powerpoint-pptx.md` |
+| 14 | Proactive Agent（主动型 Agent） | `skills-tutorials/14-proactive-agent.md` |
+| 15 | Self-Improving Agent（自我改进） | `skills-tutorials/15-self-improving-agent.md` |
+| 16 | Skill Vetter（安全审核） | `skills-tutorials/16-skill-vetter.md` |
+| 17 | Summarize（多源摘要） | `skills-tutorials/17-summarize.md` |
+| 18 | Tavily Search（AI 搜索） | `skills-tutorials/18-tavily-search.md` |

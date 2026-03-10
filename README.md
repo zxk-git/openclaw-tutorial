@@ -4,7 +4,7 @@
 
 **从零到精通的 OpenClaw Agent 自动化开发指南**
 
-[![Chapters](https://img.shields.io/badge/chapters-21-blue?style=flat-square)](OUTLINE.md) [![Words](https://img.shields.io/badge/words-35%2C000%2B-green?style=flat-square)](.) [![Quality](https://img.shields.io/badge/quality-98.1%2F100-brightgreen?style=flat-square)](.) [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](LICENSE) [![Auto Updated](https://img.shields.io/badge/auto--updated-24%2F7-purple?style=flat-square)](.) [![Git Auto-Push](https://img.shields.io/badge/git--push-auto-blueviolet?style=flat-square)](.)
+[![Chapters](https://img.shields.io/badge/chapters-21%20%2B%20Skills-blue?style=flat-square)](OUTLINE.md) [![Words](https://img.shields.io/badge/words-50%2C000%2B-green?style=flat-square)](.) [![Quality](https://img.shields.io/badge/quality-98.1%2F100-brightgreen?style=flat-square)](.) [![License](https://img.shields.io/badge/license-MIT-orange?style=flat-square)](LICENSE) [![Auto Updated](https://img.shields.io/badge/auto--updated-24%2F7-purple?style=flat-square)](.) [![Git Auto-Push](https://img.shields.io/badge/git--push-auto-blueviolet?style=flat-square)](.) [![Skills](https://img.shields.io/badge/skills--tutorials-18-ff69b4?style=flat-square)](skills-tutorials/README.md)
 
 *本教程由 AI Agent 自动生成、持续优化，覆盖 OpenClaw 安装部署、Skills 开发、自动化集成到企业级实战的完整知识体系。*
 
@@ -50,18 +50,18 @@
 | 11 | [高级场景：第三方平台集成](11-高级场景-第三方平台集成.md) | ⭐⭐⭐⭐ | GitHub/Notion/Telegram/Discord 集成 |
 | 12 | [实践案例与常见问题](12-实践案例与常见问题.md) | ⭐⭐⭐ | 知识助手、监控机器人、全链路自动化案例 |
 | 13 | [教程自动更新与仓库维护](13-教程自动更新与仓库维护.md) | ⭐⭐ | 自动化维护、Cron 任务、持续优化 |
-| 14 | 安全与权限管理 | ⭐⭐⭐ | Credential 管理、执行审批、沙箱隔离 |
-| 15 | Memory 记忆系统深入 | ⭐⭐⭐ | 短期/长期记忆、跨会话持久化、检索机制 |
+| 14 | [安全与权限管理](14-安全与权限管理.md) | ⭐⭐⭐ | Credential 管理、执行审批、沙箱隔离 |
+| 15 | [Memory 记忆系统深入](15-Memory%20记忆系统深入.md) | ⭐⭐⭐ | 短期/长期记忆、跨会话持久化、检索机制 |
 
 ### 第四部分：专家实战
 
 | # | 章节 | 难度 | 简介 |
 |---|------|------|------|
-| 16 | MCP 工具协议与自定义集成 | ⭐⭐⭐⭐ | MCP 规范、自定义 Server 开发、工具注册 |
-| 17 | 浏览器自动化与网页交互 | ⭐⭐⭐ | Browser Relay、网页抓取、表单自动化 |
-| 18 | 性能优化与规模化部署 | ⭐⭐⭐⭐ | Token 优化、并发管理、监控告警 |
-| 19 | 团队协作与企业部署 | ⭐⭐⭐ | 多用户权限、私有化部署、安全合规 |
-| 20 | OpenClaw 生态与未来展望 | ⭐⭐ | 开源生态、社区贡献、行业趋势 |
+| 16 | [MCP 工具协议与自定义集成](16-MCP%20工具协议与自定义集成.md) | ⭐⭐⭐⭐ | MCP 规范、自定义 Server 开发、工具注册 |
+| 17 | [浏览器自动化与网页交互](17-浏览器自动化与网页交互.md) | ⭐⭐⭐ | Browser Relay、网页抓取、表单自动化 |
+| 18 | [性能优化与规模化部署](18-性能优化与规模化部署.md) | ⭐⭐⭐⭐ | Token 优化、并发管理、监控告警 |
+| 19 | [团队协作与企业部署](19-团队协作与企业部署.md) | ⭐⭐⭐ | 多用户权限、私有化部署、安全合规 |
+| 20 | [OpenClaw 生态与未来展望](20-OpenClaw%20生态与未来展望.md) | ⭐⭐ | 开源生态、社区贡献、行业趋势 |
 
 ### 附录：实战专题
 
@@ -71,9 +71,28 @@
 
 ### 附录：Skills 安装与使用教程
 
-| 教程 | 简介 |
-|------|------|
-| [Skills 教程合集](skills-tutorials/README.md) | 18 个已安装 Skills 的完整安装、配置和使用教程 |
+> 📖 **[Skills 教程合集](skills-tutorials/README.md)** — 18 个已安装 Skills 的完整安装、配置和使用教程
+
+| # | Skill | 简介 | 教程 |
+|---|-------|------|------|
+| 01 | McPorter | MCP 工具 CLI 管理器 | [查看](skills-tutorials/01-mcporter.md) |
+| 02 | Complex Task Automator | 全链路任务自动化引擎 | [查看](skills-tutorials/02-complex-task-automator.md) |
+| 03 | DDG Web Search | DuckDuckGo 零 API Key 搜索 | [查看](skills-tutorials/03-ddg-web-search.md) |
+| 04 | Exa Web Search | 免费 AI 神经搜索 | [查看](skills-tutorials/04-exa-web-search.md) |
+| 05 | File Search | fd + ripgrep 快速搜索 | [查看](skills-tutorials/05-file-search.md) |
+| 06 | Find Skills | 技能发现与安装 | [查看](skills-tutorials/06-find-skills.md) |
+| 07 | GitHub | gh CLI 集成 | [查看](skills-tutorials/07-github.md) |
+| 08 | GoG | Google Workspace CLI | [查看](skills-tutorials/08-gog.md) |
+| 09 | Markdown Converter | 多格式转 Markdown | [查看](skills-tutorials/09-markdown-converter.md) |
+| 10 | Memory | 无限分类记忆系统 | [查看](skills-tutorials/10-memory.md) |
+| 11 | Multi Search Engine | 17 搜索引擎集成 | [查看](skills-tutorials/11-multi-search-engine.md) |
+| 12 | Notion | Notion API 集成 | [查看](skills-tutorials/12-notion.md) |
+| 13 | PowerPoint PPTX | PPT 自动化生成 | [查看](skills-tutorials/13-powerpoint-pptx.md) |
+| 14 | Proactive Agent | 主动预测型 Agent | [查看](skills-tutorials/14-proactive-agent.md) |
+| 15 | Self-Improving Agent | 持续自我改进 | [查看](skills-tutorials/15-self-improving-agent.md) |
+| 16 | Skill Vetter | 技能安全审核 | [查看](skills-tutorials/16-skill-vetter.md) |
+| 17 | Summarize | 多源快速摘要 | [查看](skills-tutorials/17-summarize.md) |
+| 18 | Tavily Search | AI 优化搜索 | [查看](skills-tutorials/18-tavily-search.md) |
 
 > 📋 **[查看完整大纲（含子节与练习）](OUTLINE.md)**
 

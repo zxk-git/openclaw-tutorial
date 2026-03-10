@@ -126,4 +126,129 @@ openclaw logs --level error
 
 ---
 
-> 💡 没找到答案？可以在 [GitHub Issues](https://github.com/zxk-git/openclaw-tutorial-auto/issues) 提问。
+## 安全与权限
+
+### Q: 如何管理 Credential（凭证）？
+
+**A:** 参考 [[14 安全与权限管理]]：
+```bash
+# 查看所有凭证
+openclaw credential list
+
+# 添加凭证
+openclaw credential set <name> <value>
+
+# 删除凭证
+openclaw credential remove <name>
+```
+
+凭证存储在 `~/.openclaw/credentials/` 目录下，建议通过 `.gitignore` 排除。
+
+### Q: exec-approvals 自动审批如何配置？
+
+**A:** 编辑 `~/.openclaw/exec-approvals.json`，配置允许自动执行的命令模式：
+```json
+{
+  "autoApprove": ["ls", "cat", "echo"],
+  "requireApproval": ["rm", "mv", "curl"]
+}
+```
+
+### Q: 如何进行安全审计？
+
+**A:** 参考 [[14 安全与权限管理]]：
+```bash
+# 运行内置安全审计
+openclaw security audit
+
+# 检查 Skill 安全
+openclaw skill vet <skill-name>
+```
+
+---
+
+## Memory 记忆系统
+
+### Q: Memory Skill 怎么用？
+
+**A:** 参考 [[15 Memory 记忆系统深入]]：
+```bash
+# 存储记忆
+openclaw memory set "key" "value"
+
+# 检索记忆
+openclaw memory get "key"
+
+# 列出所有记忆
+openclaw memory list
+```
+
+记忆文件存储在 `~/.openclaw/workspace/memory/` 目录下。
+
+### Q: 记忆太多会影响性能吗？
+
+**A:** 会。OpenClaw 采用分类记忆 + 按需加载机制，但超过 500 条仍建议定期归档：
+```bash
+# 合并相似记忆
+openclaw memory merge
+
+# 归档旧记忆
+openclaw memory archive --before 30d
+```
+
+---
+
+## MCP 与 Browser
+
+### Q: 什么是 MCP？
+
+**A:** MCP (Model Context Protocol) 是 OpenClaw 的工具协议标准。参考 [[16 MCP 工具协议与自定义集成]]，可用 McPorter 管理 MCP Server：
+```bash
+mcporter list          # 列出已安装 MCP Server
+mcporter install <pkg> # 安装新 Server
+mcporter status        # 查看运行状态
+```
+
+### Q: Browser Relay 如何使用？
+
+**A:** 参考 [[17 浏览器自动化与网页交互]]：
+```bash
+# 启动 Browser Relay
+openclaw browser start
+
+# 导航到页面
+openclaw browser navigate "https://example.com"
+
+# 截图
+openclaw browser screenshot
+```
+
+---
+
+## Skills 相关
+
+### Q: 如何查找和安装新 Skill？
+
+**A:** 
+```bash
+# 在 ClawdHub 搜索
+clawdhub search <keyword>
+
+# 安装 Skill
+clawdhub install <skill-slug>
+
+# 或使用 Find Skills 功能
+npx skills find <keyword>
+```
+
+详见 [[Skills 教程合集]] 获取所有 18 个 Skill 的完整教程。
+
+### Q: Proactive Agent 和 Self-Improving Agent 怎么激活？
+
+**A:** 这两个 Skill 通过 Prompt 注入方式工作，不需要命令调用：
+1. **Proactive Agent**: 安装后自动注入到 HEARTBEAT.md，Agent 每次交互时加载
+2. **Self-Improving Agent**: 需启用 Hook — `openclaw hooks enable self-improvement`，之后自动在 `.learnings/` 目录下积累经验
+
+---
+
+> 💡 没找到答案？可以在 [GitHub Issues](https://github.com/zxk-git/openclaw-tutorial/issues) 提问。
