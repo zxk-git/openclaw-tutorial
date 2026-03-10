@@ -568,6 +568,39 @@ OpenClaw skills are modular tools that enhance AI agent functionality; the most 
 
 OpenClaw skill sharing community includes LobeHub and GitHub repositories for skill installation and reviews. Essential skills are available for project management and coding assistance. The community provides extensive documentation and support.
 
+
+## 最新动态与补充
+
+> 📅 更新时间: 2026-03-10
+
+### 补充 1
+
+OpenClaw skills are modular tools that enhance AI agents' functionality; the most popular skill is Tavily-web-search; malicious skills have been found on ClawHub, posing security risks.
+
+### 补充 2
+
+- **Best ClawHub Skills: A Complete Guide - DataCamp** (relevance: 100%)
+  https://www.datacamp.com/es/blog/best-clawhub-skills
+  * tavily-web-search is the most widely installed search skill on ClawHub. It connects to the Tavily API, which is optimized for AI agents rather than human browsers. * gi
+
+### 补充 3
+
+- **Best Openclaw Skills You Should Install (From ClawHub's 500+ Skills)** (relevance: 100%)
+  https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_should_install_from/
+  [Skip to main content](https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_shoul
+
+### 补充 4
+
+- **OpenClaw Setup Guide: 25 Tools + 53 Skills Explained | WenHao Yu** (relevance: 100%)
+  https://yu-wenhao.com/en/blog/openclaw-tools-skills-tutorial/
+  ![Image 3: OpenClaw concentric circle architecture: Layer 1 core tools (read, write, exec), Layer 2 advanced tools (browser, memory, automation),
+
+### 补充 5
+
+- **Hundreds of Malicious Skills Found in OpenClaw's ClawHub** (relevance: 100%)
+  https://www.esecurityplanet.com/threats/hundreds-of-malicious-skills-found-in-openclaws-clawhub/
+  Link to What is Network Security? Learn about the fundamentals of network security and how to protect your organizatio
+
 ## 本章小结
 
 - **ClawHub 平台简介**：了解了 ClawHub 作为 OpenClaw 技能市场的定位、架构和核心功能。
