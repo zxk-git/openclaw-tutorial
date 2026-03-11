@@ -6,3 +6,4 @@ __pycache__/
 .DS_Store
 *.md.bak
 *.log
+**/*.md.bak
