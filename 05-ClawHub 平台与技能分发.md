@@ -1,10 +1,43 @@
----
-[⬅️ 上一章：Skills 安装与管理实践](04-Skills%20安装与管理实践.md) | [📑 目录](README.md) | [➡️ 下一章：自动化命令与脚本集成](06-自动化命令与脚本集成.md)
+> **📖 OpenClaw 中文实战教程** | [← 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [目录](README.md) | [下一章：自动化命令与脚本集成 →](06-自动化命令与脚本集成.md)
+
 ---
 
-# 第5章：ClawHub 平台与技能分发
+---
+[⬅️ 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [📑 目录](README.md) | [➡️ 下一章：自动化命令与脚本集成](06-自动化命令与脚本集成.md)
+---
 
-> **难度**: ⭐⭐ 中级 | **预计阅读**: 18 分钟 | **前置章节**: [第 3-4 章](03-Skills%20插件体系与批量开发.md)
+# 第 5 章：ClawHub 平台与技能分发
+
+> **难度**: ⭐⭐ 中级 | **预计阅读**: 18 分钟 | **前置章节**: [第 3-4 章](03-Skills 插件体系与批量开发.md)
+
+
+## 📑 本章目录
+
+- [📖 目录](#目录)
+- [5.1 ClawHub 平台简介](#51-clawhub-平台简介)
+- [5.2 浏览与搜索技能](#52-浏览与搜索技能)
+- [搜索参数说明](#搜索参数说明)
+- [5.3 安装与管理技能](#53-安装与管理技能)
+- [查看已安装技能](#查看已安装技能)
+- [更新与卸载](#更新与卸载)
+- [安装前后对比](#安装前后对比)
+- [5.4 发布技能到 ClawHub](#54-发布技能到-clawhub)
+- [功能说明](#功能说明)
+- [使用方法](#使用方法)
+- [配置](#配置)
+- [版本更新](#版本更新)
+- [5.5 社区协作](#55-社区协作)
+- [社区贡献最佳实践](#社区贡献最佳实践)
+- [5.6 实操练习](#56-实操练习)
+- [练习 2：为已有技能创建发布配置](#练习-2为已有技能创建发布配置)
+- [练习 3：模拟社区协作流程](#练习-3模拟社区协作流程)
+- [5.7 常见问题 (FAQ)](#57-常见问题-faq)
+- [Q5：已发布的技能如何撤销或删除？](#q5已发布的技能如何撤销或删除)
+- [5.8 参考资源](#58-参考资源)
+- [最新动态与补充](#最新动态与补充)
+- [最新动态与补充](#最新动态与补充)
+- [最新动态与补充](#最新动态与补充)
+- [本章小结](#本章小结)
 
 > 本章介绍 ClawHub（又名 skills.sh）技能市场平台，包括如何浏览、安装、发布技能，以及社区协作流程。通过本章学习，你将掌握从技能发现到发布上架的完整工作流，并能独立参与社区技能生态建设。
 
@@ -61,14 +94,14 @@ npx skills install tavily-search
 
 # 搜索可用技能
 npx skills find "关键词"
-```
+```text
 
 安装完成后，可通过以下命令确认技能已就绪：
 
 ```bash
 # 列出所有已安装的技能
 openclaw skills list
-```
+```bash
 
 ---
 
@@ -91,7 +124,9 @@ npx skills find "automation"
 
 # 查看技能详情（包括版本、依赖、作者等信息）
 npx skills info tavily-search
-```
+```bash
+
+## 搜索参数说明
 
 ### 搜索参数说明
 
@@ -131,7 +166,7 @@ npx skills info tavily-search
   },
   "homepage": "https://skills.sh/tavily-search"
 }
-```
+```text
 
 ---
 
@@ -147,16 +182,20 @@ npx skills install tavily-search
 
 # 安装指定版本
 npx skills install tavily-search@1.2.0
-```
+```text
 
 安装完成后，技能文件会存放在本地 `~/.openclaw/workspace/skills/` 目录下。
+
+## 查看已安装技能
 
 ### 查看已安装技能
 
 ```bash
 # 列出所有已安装的技能及其版本
 openclaw skills list
-```
+```text
+
+## 更新与卸载
 
 ### 更新与卸载
 
@@ -166,7 +205,9 @@ npx skills update tavily-search
 
 # 卸载技能
 npx skills uninstall tavily-search
-```
+```bash
+
+## 安装前后对比
 
 ### 安装前后对比
 
@@ -191,7 +232,7 @@ settings:
   max_results: 5
   include_domains: []
   exclude_domains: []
-```
+```text
 
 也可以通过环境变量设置：
 
@@ -201,7 +242,7 @@ export TAVILY_API_KEY="tvly-xxxxxxxxxxxxxxxx"
 
 # 验证技能是否正常工作
 openclaw skills test tavily-search
-```
+```bash
 
 ---
 
@@ -241,7 +282,7 @@ permissions:
   - network
   - filesystem
 ---
-```
+```text
 
 ```markdown
 # My Awesome Skill
@@ -256,7 +297,7 @@ permissions:
 
 ## 配置
 需要设置环境变量 `MY_API_KEY`。
-```
+```text
 
 ### Step-by-Step 发布流程
 
@@ -268,7 +309,7 @@ cd ~/.openclaw/workspace/skills/my-awesome-skill
 
 # 初始化发布配置（生成 .skillrc 文件）
 npx skills init
-```
+```text
 
 初始化后会生成 `.skillrc` 配置文件：
 
@@ -280,7 +321,7 @@ npx skills init
     "access": "public"
   }
 }
-```
+```text
 
 **Step 2：验证技能格式与安全性**
 
@@ -293,26 +334,28 @@ npx skills vet .
 
 # 运行技能测试
 openclaw skills test my-awesome-skill
-```
+```text
 
 验证通过后，会显示类似输出：
 
-```
+```text
 ✅ SKILL.md format: valid
 ✅ README.md: found
 ✅ Dependencies: declared
 ✅ Security scan: passed
 Ready to publish!
-```
+```text
 
 **Step 3：发布到 ClawHub**
 
 ```bash
 # 发布（首次发布需要 GitHub 登录授权）
 npx skills publish
-```
+```text
 
 发布成功后，你的技能就可以在 [https://skills.sh](https://skills.sh) 上被搜索和安装了。
+
+## 版本更新
 
 ### 版本更新
 
@@ -324,7 +367,7 @@ npx skills publish
 # 3. 重新验证并发布
 npx skills validate
 npx skills publish
-```
+```text
 
 版本号建议遵循 [语义化版本](https://semver.org/lang/zh-CN/) 规范：
 
@@ -367,7 +410,9 @@ git commit -m "feat: improve search accuracy"
 # Step 5: 推送并创建 Pull Request
 git push origin feature/improve-search
 # 然后在 GitHub 上创建 PR
-```
+```text
+
+## 社区贡献最佳实践
 
 ### 社区贡献最佳实践
 
@@ -400,7 +445,9 @@ npx skills install ddg-web-search
 
 # Step 4: 验证安装结果
 openclaw skills list | grep ddg-web-search
-```
+```text
+
+## 练习 2：为已有技能创建发布配置
 
 ### 练习 2：为已有技能创建发布配置
 
@@ -421,7 +468,9 @@ npx skills validate
 
 # Step 5: 运行安全扫描
 npx skills vet .
-```
+```text
+
+## 练习 3：模拟社区协作流程
 
 ### 练习 3：模拟社区协作流程
 
@@ -444,7 +493,7 @@ git diff
 # Step 5: 提交修改
 git add README.md
 git commit -m "fix: correct typo in README"
-```
+```text
 
 ---
 
@@ -460,7 +509,7 @@ git commit -m "fix: correct typo in README"
 
 ```bash
 npx skills status my-awesome-skill
-```
+```bash
 
 ### Q3：Skill 被拒绝发布怎么办？
 
@@ -486,6 +535,8 @@ openclaw skills test my-awesome-skill
 # 也可手动触发技能调用（交互模式）
 openclaw chat --skill my-awesome-skill
 ```
+
+## Q5：已发布的技能如何撤销或删除？
 
 ### Q5：已发布的技能如何撤销或删除？
 
@@ -523,9 +574,9 @@ OpenClaw skills are modular tools that enhance AI agent functionality; the most 
   https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_should_install_from/
   [Skip to main content](https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_shoul
 
-### 补充 4
+###-补充-4
 
-- **OpenClaw Setup Guide: 25 Tools + 53 Skills Explained | WenHao Yu** (relevance: 100%)
+--**OpenClaw-Setup-Guide:-25-Tools-+-53-Skills-Explained-|-WenHao-Yu**-(relevance:-100%)
   https://yu-wenhao.com/en/blog/openclaw-tools-skills-tutorial/
   ![Image 3: OpenClaw concentric circle architecture: Layer 1 core tools (read, write, exec), Layer 2 advanced tools (browser, memory, automation),
 
@@ -552,9 +603,9 @@ OpenClaw skills are modular tools that enhance AI agent functionality; the most 
   https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_should_install_from/
   [Skip to main content](https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_shoul
 
-### 补充 3
+###-补充-3
 
-- **OpenClaw Setup Guide: 25 Tools + 53 Skills Explained | WenHao Yu** (relevance: 100%)
+--**OpenClaw-Setup-Guide:-25-Tools-+-53-Skills-Explained-|-WenHao-Yu**-(relevance:-100%)
   https://yu-wenhao.com/en/blog/openclaw-tools-skills-tutorial/
   ![Image 3: OpenClaw concentric circle architecture: Layer 1 core tools (read, write, exec), Layer 2 advanced tools (browser, memory, automation),
 
@@ -589,9 +640,9 @@ OpenClaw skills are modular tools that enhance AI agents' functionality; the mos
   https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_should_install_from/
   [Skip to main content](https://www.reddit.com/r/AI_Agents/comments/1r2u356/best_openclaw_skills_you_shoul
 
-### 补充 4
+###-补充-4
 
-- **OpenClaw Setup Guide: 25 Tools + 53 Skills Explained | WenHao Yu** (relevance: 100%)
+--**OpenClaw-Setup-Guide:-25-Tools-+-53-Skills-Explained-|-WenHao-Yu**-(relevance:-100%)
   https://yu-wenhao.com/en/blog/openclaw-tools-skills-tutorial/
   ![Image 3: OpenClaw concentric circle architecture: Layer 1 core tools (read, write, exec), Layer 2 advanced tools (browser, memory, automation),
 
@@ -600,6 +651,35 @@ OpenClaw skills are modular tools that enhance AI agents' functionality; the mos
 - **Hundreds of Malicious Skills Found in OpenClaw's ClawHub** (relevance: 100%)
   https://www.esecurityplanet.com/threats/hundreds-of-malicious-skills-found-in-openclaws-clawhub/
   Link to What is Network Security? Learn about the fundamentals of network security and how to protect your organizatio
+
+
+## 常见问题 (FAQ)
+
+### Q: 本章内容是否需要前置知识？
+
+**A:** 建议先完成前面的章节，确保理解 OpenClaw 的基础概念和安装方式。
+
+### Q: 遇到命令执行错误怎么办？
+
+**A:** 请检查 OpenClaw 是否正确安装，运行 `openclaw --version` 确认版本。如问题持续，请参考故障排查章节或提交 GitHub Issue。
+
+### Q: 如何获取更多帮助？
+
+**A:** 可以通过以下渠道获取帮助：
+- OpenClaw GitHub Issues
+- ClawHub 社区讨论
+- 官方文档 FAQ 页面
+
+
+---
+
+## 参考来源
+
+| 来源 | 链接 | 说明 |
+|------|------|------|
+| OpenClaw 官方文档 | https://docs.openclaw.com | 官方安装与配置手册 |
+| OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
+| ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
 
 ## 本章小结
 
@@ -613,5 +693,9 @@ OpenClaw skills are modular tools that enhance AI agents' functionality; the mos
 > 下一章：[06-自动化命令与脚本集成](06-自动化命令与脚本集成.md)
 
 ---
-[⬅️ 上一章：Skills 安装与管理实践](04-Skills%20安装与管理实践.md) | [📑 目录](README.md) | [➡️ 下一章：自动化命令与脚本集成](06-自动化命令与脚本集成.md)
+[⬅️ 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [📑 目录](README.md) | [➡️ 下一章：自动化命令与脚本集成](06-自动化命令与脚本集成.md)
 ---
+
+---
+
+> **📖 章节导航** | [← 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [目录](README.md) | [下一章：自动化命令与脚本集成 →](06-自动化命令与脚本集成.md)

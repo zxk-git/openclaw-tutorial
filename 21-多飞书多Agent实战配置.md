@@ -1,10 +1,42 @@
----
-[⬅️ 上一章：OpenClaw 生态与未来展望](20-OpenClaw%20生态与未来展望.md) | [📑 目录](README.md)
+> **📖 OpenClaw 中文实战教程** | [← 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [目录](README.md) |
+
 ---
 
-# 第21章：多飞书多Agent实战配置
+---
+[⬅️ 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [📑 目录](README.md)
+---
 
-> **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 25 分钟 | **前置章节**: [第 7 章](07-飞书集成与消息自动化.md)、[第 8 章](08-单%20Gateway%20多%20Agent%20配置与管理.md)
+# 第 21 章：多飞书多 Agent 实战配置
+
+> **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 25 分钟 | **前置章节**: [第 7 章](07-飞书集成与消息自动化.md)、[第 8 章](08-单 Gateway 多 Agent 配置与管理.md)
+
+
+## 📑 本章目录
+
+- [📖 目录](#目录)
+- [21.1 场景与目标](#211-场景与目标)
+- [21.2 前置条件](#212-前置条件)
+- [21.3 创建第二个飞书应用](#213-创建第二个飞书应用)
+- [21.4 配置多飞书账号](#214-配置多飞书账号)
+- [深度连接验证](#深度连接验证)
+- [21.5 创建独立 Agent 与工作空间](#215-创建独立-agent-与工作空间)
+- [21.6 自定义工作空间文件](#216-自定义工作空间文件)
+- [核心能力](#核心能力)
+- [交互风格](#交互风格)
+- [原则](#原则)
+- [风格](#风格)
+- [删除 BOOTSTRAP.md](#删除-bootstrapmd)
+- [21.7 路由绑定与验证](#217-路由绑定与验证)
+- [应用配置](#应用配置)
+- [21.8 消息测试](#218-消息测试)
+- [验证 Agent 路由](#验证-agent-路由)
+- [21.9 Cron 任务分流](#219-cron-任务分流)
+- [编辑现有 Cron 任务](#编辑现有-cron-任务)
+- [实操练习](#实操练习)
+- [常见问题 (FAQ)](#常见问题-faq)
+- [参考资料](#参考资料)
+- [最新动态与补充](#最新动态与补充)
+- [本章小结](#本章小结)
 
 > 本章是一个完整的实战教程，基于真实部署经验，演示如何在同一台服务器上配置多个飞书机器人，每个绑定独立的 Agent、工作空间和身份。适用于需要"通用助手 + 专业助手"分工协作的场景。
 
@@ -30,7 +62,7 @@
 
 ## 21.1 场景与目标
 
-### 为什么需要多飞书多Agent？
+### 为什么需要多飞书多 Agent？
 
 单飞书机器人 + 单 Agent 的架构在简单场景下够用，但当需求增长时会遇到瓶颈：
 
@@ -56,7 +88,7 @@ Gateway (端口 18789)
     ├── App ID: cli_a924fdf77ef7dcd5
     ├── Workspace: ~/.openclaw/workspace-coding/
     └── 角色: 代码专家（编程、审查、架构、调试）
-```
+```text
 
 ---
 
@@ -80,7 +112,7 @@ openclaw agents
 
 # 确认 feishu SDK
 ls /usr/lib/node_modules/openclaw/node_modules/@larksuiteoapi/
-```
+```text
 
 ---
 
@@ -91,7 +123,7 @@ ls /usr/lib/node_modules/openclaw/node_modules/@larksuiteoapi/
 1. 登录 [飞书开发者后台](https://open.feishu.cn/app)
 2. 点击 **创建自建应用**
 3. 填写应用信息：
-   - 名称：`代码助手`（或你的自定义名称）
+   - 名称：` 代码助手 `（或你的自定义名称）
    - 描述：专注于编程和软件开发的 AI 助手
 
 ### Step 2: 配置应用权限
@@ -139,19 +171,20 @@ OpenClaw 的飞书多账号使用 `channels.feishu.accounts` 嵌套对象：
       "allowFrom": ["*"],
       "accounts": {
         "default": {
-          "appId": "cli_第一个App的ID",
-          "appSecret": "第一个App的Secret"
+          "appId": "cli_第一个 App 的 ID",
+          "appSecret": "第一个 App 的 Secret"
         },
         "coding-bot": {
-          "appId": "cli_第二个App的ID",
-          "appSecret": "第二个App的Secret",
+          "appId": "cli_第二个 App 的 ID",
+          "appSecret": "第二个 App 的 Secret",
           "name": "Coding Bot"
         }
+
       }
     }
   }
 }
-```
+```bash
 
 #### 配置要点
 
@@ -179,7 +212,7 @@ OpenClaw 的飞书多账号使用 `channels.feishu.accounts` 嵌套对象：
     }
   }
 }
-```
+```text
 
 改为 accounts 嵌套结构（如上）。
 
@@ -190,7 +223,7 @@ openclaw channels add \
   --channel feishu \
   --account coding-bot \
   --name "Coding Bot"
-```
+```bash
 
 > ⚠️ **注意**：CLI `channels add` 会自动将现有单账号迁移到 `accounts.default`，但建议手动编辑确保配置准确。
 
@@ -202,7 +235,7 @@ openclaw gateway restart
 
 # 检查是否有配置错误
 openclaw channels list
-```
+```text
 
 正确输出应显示两个账号：
 
@@ -210,20 +243,20 @@ openclaw channels list
 Chat channels:
 - Feishu coding-bot (Coding Bot): configured, enabled
 - Feishu default: configured, enabled
-```
+```text
 
-### 深度连接验证
+## 深度连接验证
 
 ```bash
 openclaw channels status --probe
-```
+```text
 
 期望输出：
 
 ```
 - Feishu coding-bot (Coding Bot): enabled, configured, running, works
 - Feishu default: enabled, configured, running, works
-```
+```text
 
 ---
 
@@ -237,7 +270,7 @@ openclaw agents add coding \
   --bind feishu:coding-bot \
   --model github-copilot/gpt-4.1 \
   --non-interactive
-```
+```text
 
 这条命令自动完成：
 1. 在配置中注册新 Agent `coding`
@@ -252,13 +285,13 @@ openclaw agents set-identity \
   --agent coding \
   --name "代码助手" \
   --emoji "💻"
-```
+```text
 
 ### 验证创建结果
 
 ```bash
 openclaw agents
-```
+```text
 
 期望输出：
 
@@ -275,7 +308,7 @@ Agents:
   Workspace: ~/.openclaw/workspace-coding
   Model: github-copilot/gpt-4.1
   Routing: Feishu coding-bot
-```
+```text
 
 ---
 
@@ -320,7 +353,7 @@ Agents:
 - 直接给出可运行的代码，而非抽象建议
 - 中文沟通，代码注释使用英文
 - 遇到多种方案时，先推荐最佳实践
-```
+```text
 
 ### SOUL.md 示例
 
@@ -339,26 +372,26 @@ Agents:
 
 - 直接、简洁、专业
 - 中文沟通，代码注释英文
-```
+```text
 
 ### USER.md — 复用主工作空间内容
 
 ```bash
 # 直接从主工作空间复制
 cp ~/.openclaw/workspace/USER.md ~/.openclaw/workspace-coding/USER.md
-```
+```text
 
-### 删除 BOOTSTRAP.md
+## 删除 BOOTSTRAP.md
 
 ```bash
 rm ~/.openclaw/workspace-coding/BOOTSTRAP.md
-```
+```text
 
 ### 创建 memory 目录
 
 ```bash
 mkdir -p ~/.openclaw/workspace-coding/memory
-```
+```text
 
 ---
 
@@ -381,7 +414,7 @@ OpenClaw 通过 `bindings` 数组将渠道账号映射到 Agent：
     }
   ]
 }
-```
+```text
 
 | 路由规则 | 匹配规则 | 目标 Agent |
 |----------|----------|------------|
@@ -399,19 +432,19 @@ openclaw agents bind --agent coding --bind feishu:coding-bot
 
 # 移除绑定
 openclaw agents unbind --agent coding --bind feishu:coding-bot
-```
+```text
 
-### 应用配置
+## 应用配置
 
 ```bash
 openclaw gateway restart
-```
+```text
 
 ### 验证路由
 
 ```bash
 openclaw agents
-```
+```text
 
 确认 `coding` Agent 的 Routing 行显示 `Feishu coding-bot`。
 
@@ -432,18 +465,18 @@ openclaw agents
 openclaw message send \
   --channel feishu \
   --account coding-bot \
-  --target "oc_你的群聊ID" \
+  --target "oc_你的群聊 ID" \
   --message "💻 Coding Bot 上线！这是来自代码助手的测试消息。"
 
 # 通过 default 发消息（对比）
 openclaw message send \
   --channel feishu \
   --account default \
-  --target "oc_你的群聊ID" \
+  --target "oc_你的群聊 ID" \
   --message "🤖 小光报到！这是来自默认机器人的消息。"
-```
+```text
 
-### 验证 Agent 路由
+## 验证 Agent 路由
 
 在飞书中分别 @两个机器人发消息：
 1. @小光 → 问一个日常问题 → 应由 main Agent 回复
@@ -453,7 +486,7 @@ openclaw message send \
 
 ```bash
 openclaw channels logs --channel feishu | tail -20
-```
+```text
 
 ---
 
@@ -476,9 +509,9 @@ openclaw cron add \
   --channel feishu \
   --account coding-bot \
   --message "代码质量检查报告"
-```
+```text
 
-### 编辑现有 Cron 任务
+## 编辑现有 Cron 任务
 
 在 `~/.openclaw/cron/jobs.json` 中为任务添加 `accountId` 字段：
 
@@ -486,9 +519,9 @@ openclaw cron add \
 {
   "channel": "feishu",
   "accountId": "coding-bot",
-  "target": "oc_群聊ID"
+  "target": "oc_群聊 ID"
 }
-```
+```bash
 
 ---
 
@@ -534,7 +567,7 @@ openclaw cron add \
     }
   }
 }
-```
+```text
 
 ### Q2: 230002 `Bot/User can NOT be out of the chat`
 
@@ -573,7 +606,7 @@ openclaw agents  # 确认 Routing 行显示正确的绑定
 ## 参考资料
 
 - [第 7 章：飞书集成与消息自动化](07-飞书集成与消息自动化.md) — 单飞书 App 配置基础
-- [第 8 章：单 Gateway 多 Agent 配置与管理](08-单%20Gateway%20多%20Agent%20配置与管理.md) — 多 Agent 架构理论
+- [第 8 章：单 Gateway 多 Agent 配置与管理](08-单 Gateway 多 Agent 配置与管理.md) — 多 Agent 架构理论
 - [飞书开发者文档](https://open.feishu.cn/document/) — App 创建与权限管理
 - [OpenClaw CLI 参考](https://docs.openclaw.ai/cli/channels) — Channels 命令详解
 
@@ -612,9 +645,21 @@ OpenClaw integrates with Feishu for multi-bot collaboration, using appId/appSecr
   https://termo.ai/skills/feishu-agent-relay
   Enables multi-Agent collaboration on Feishu by relaying tasks between coordinator and specialist Bots with user ID mapping and proactive messaging. | Mode | For | Us
 
+
+---
+
+## 参考来源
+
+| 来源 | 链接 | 可信度 | 说明 |
+|------|------|--------|------|
+| 飞书开放平台文档 | https://open.feishu.cn/document | A | 飞书, 机器人, 消息 |
+| OpenClaw 官方文档 | https://docs.openclaw.com | A | 安装, 配置, 命令 |
+| OpenClaw GitHub 仓库 | https://github.com/anthropics/openclaw | A | 源码, Issues, Release |
+| ClawHub Skills 平台 | https://hub.openclaw.com | A | Skills, 市场, 安装 |
+
 ## 本章小结
 
-本章通过真实部署实例，完整演示了多飞书多Agent架构的配置过程：
+本章通过真实部署实例，完整演示了多飞书多 Agent 架构的配置过程：
 
 | 步骤 | 操作 | 产物 |
 |------|------|------|
@@ -636,5 +681,9 @@ OpenClaw integrates with Feishu for multi-bot collaboration, using appId/appSecr
 > 🔗 **下一步建议**：给新 Agent 配置专属 Cron 任务，或为不同 Agent 选择不同的 AI 模型（如 Claude vs GPT-4.1），实现能力互补。
 
 ---
-[⬅️ 上一章：OpenClaw 生态与未来展望](20-OpenClaw%20生态与未来展望.md) | [📑 目录](README.md)
+[⬅️ 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [📑 目录](README.md)
 ---
+
+---
+
+> **📖 章节导航** | [← 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [目录](README.md) |

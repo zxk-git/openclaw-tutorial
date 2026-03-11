@@ -1,8 +1,12 @@
+> **📖 OpenClaw 中文实战教程** | [← 上一章：飞书集成与消息自动化](07-飞书集成与消息自动化.md) | [目录](README.md) | [下一章：故障排查与日志分析 →](09-故障排查与日志分析.md)
+
+---
+
 ---
 [⬅️ 上一章：飞书集成与消息自动化](07-飞书集成与消息自动化.md) | [📑 目录](README.md) | [➡️ 下一章：故障排查与日志分析](09-故障排查与日志分析.md)
 ---
 
-# 第8章：单 Gateway 多 Agent 配置与管理
+# 第 8 章：单 Gateway 多 Agent 配置与管理
 
 > **难度**: ⭐⭐⭐ 进阶 | **预计阅读**: 20 分钟 | **前置章节**: [第 2 章](02-部署与环境初始化.md)
 
@@ -58,7 +62,7 @@ Gateway (端口 18789) ─── 统一入口
     ├── SOUL.md         → 结构化沟通风格
     ├── skills/         → 任务管理相关
     └── memory/         → 项目进展
-```
+```text
 
 ### 8.1.2 核心概念一览
 
@@ -89,7 +93,7 @@ Gateway (端口 18789) ─── 统一入口
 ```bash
 # 查看已注册的 Agent 列表
 openclaw agents list
-```
+```text
 
 ---
 
@@ -123,6 +127,7 @@ EOF
 
 # 3. 创建行为准则
 cat > SOUL.md << 'EOF'
+
 ## 行为准则
 - 以数据说话，避免主观判断
 - 报告格式清晰、结构化
@@ -134,9 +139,9 @@ mkdir -p memory/ skills/ config/
 
 # 5. 验证 workspace 结构
 tree ~/.openclaw/agents/agent-2/workspace/
-```
+```text
 
-### 8.2.2 Agent 配置参数详解
+## 8.2.2 Agent 配置参数详解
 
 每个 Agent 支持以下配置项，可在 `openclaw.json` 的 `agents` 字段中定义：
 
@@ -171,7 +176,7 @@ tree ~/.openclaw/agents/agent-2/workspace/
     }
   }
 }
-```
+```text
 
 配置完成后验证路由是否生效：
 
@@ -181,9 +186,9 @@ openclaw config validate
 
 # 查看当前生效的路由映射
 openclaw agents routes
-```
+```text
 
-### 8.2.4 配置热加载
+## 8.2.4 配置热加载
 
 修改 Agent 配置后，Gateway 支持热加载而不中断服务：
 
@@ -196,7 +201,7 @@ curl -X POST http://localhost:18789/admin/reload
 
 # 验证重载结果
 openclaw agents list --verbose
-```
+```text
 
 > [!TIP]
 > 热加载仅更新配置层面的变更（如路由规则、模型切换），Agent 的 workspace 文件变更（如 IDENTITY.md）会在下一次请求时自动读取，无需重载。
@@ -226,7 +231,7 @@ openclaw agents list --verbose
 ├── agents/
 │   ├── agent-1/workspace/       ← Agent 1 专属
 │   └── agent-2/workspace/       ← Agent 2 专属
-```
+```text
 
 创建共享记忆目录并初始化：
 
@@ -242,9 +247,9 @@ cat > ~/.openclaw/workspace/shared-memory/project-status.json << 'EOF'
   "sharedNotes": []
 }
 EOF
-```
+```text
 
-### 8.3.3 消息转发
+## 8.3.3 消息转发
 
 Gateway 支持将消息从一个 Agent 转发到另一个 Agent 处理：
 
@@ -259,7 +264,7 @@ Gateway 支持将消息从一个 Agent 转发到另一个 Agent 处理：
     ]
   }
 }
-```
+```text
 
 路由规则按照从上到下的顺序匹配，第一条匹配的规则生效。`"default"` 规则作为兜底，处理所有未匹配的请求。
 
@@ -290,7 +295,7 @@ EOF
 
 # Step 3: 查看协作状态
 cat ~/.openclaw/workspace/shared-memory/project-status.json
-```
+```text
 
 ---
 
@@ -315,7 +320,7 @@ cat ~/.openclaw/workspace/shared-memory/project-status.json
     }
   }
 }
-```
+```text
 
 ### 8.4.2 监控命令
 
@@ -334,9 +339,9 @@ openclaw gateway status
 
 # 实时监控 Agent 日志输出
 openclaw logs --agent agent-1 --follow
-```
+```bash
 
-### 8.4.3 性能调优建议
+## 8.4.3 性能调优建议
 
 | 场景 | 建议 | 命令/操作 |
 |------|------|-----------|
@@ -388,11 +393,11 @@ echo "=== 运营助手 ===" && ls ~/.openclaw/agents/ops-agent/workspace/
 
 # Step 4: 注册到 Gateway
 openclaw agents list
-```
+```text
 
 **验证要点**：确认两个 Agent 目录独立，`IDENTITY.md` 内容不同。
 
-### 练习 2：配置路由规则并测试消息分发
+## 练习 2：配置路由规则并测试消息分发
 
 **目标**：设置基于关键词的路由规则，测试消息是否正确分发到对应 Agent。
 
@@ -417,11 +422,11 @@ curl -s http://localhost:18789/api/chat \
 curl -s http://localhost:18789/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "运营报告：本周用户增长趋势"}' | jq .agentId
-```
+```text
 
 **验证要点**：包含"技术问题"的消息应路由到 tech-agent，包含"运营报告"的消息应路由到 ops-agent。
 
-### 练习 3：实现跨 Agent 协作流水线
+## 练习 3：实现跨 Agent 协作流水线
 
 **目标**：搭建一个从技术报告生成到运营分析的自动化流水线。
 
@@ -432,9 +437,11 @@ mkdir -p ~/.openclaw/workspace/shared-memory/reports
 # Step 2: 模拟技术助手输出报告
 cat > ~/.openclaw/workspace/shared-memory/reports/weekly-tech.md << 'EOF'
 # 技术周报 2026-03-06
+
 ## 完成事项
 - API 接口重构完成，响应时间减少 40%
 - 新增 3 个自动化测试用例
+
 ## 待处理
 - 数据库迁移计划制定
 EOF
@@ -455,7 +462,7 @@ cat ~/.openclaw/workspace/shared-memory/reports/weekly-tech.md
 
 # Step 5: 查看协作状态
 openclaw agents stats
-```
+```text
 
 **验证要点**：共享目录中的文件可以被两个 Agent 正常读写，流水线数据传递正常。
 
@@ -472,7 +479,7 @@ openclaw agents stats
 openclaw agents list --verbose
 ```
 
-### Q2: Gateway 资源占用过高怎么办？
+## Q2: Gateway 资源占用过高怎么办？
 
 **A**: 当多个 Agent 同时处理请求时，Gateway 的内存和 CPU 占用会增加。建议从以下几方面优化：
 1. 降低 `maxConcurrent` 限制每个 Agent 的并发请求数
@@ -526,15 +533,15 @@ OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using
   https://medium.com/@ozbillwang/understanding-openclaw-a-comprehensive-guide-to-the-multi-channel-ai-gateway-ad8857cd1121
   [Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2
 
-### 补充 3
+###-补充-3
 
-- **Multi-Agent Routing - OpenClaw** (relevance: 75%)
+--**Multi-Agent-Routing---OpenClaw**-(relevance:-75%)
   https://docs.openclaw.ai/concepts/multi-agent
   [Skip to main content](https://docs.openclaw.ai/concepts/multi-agent#content-area). *   [Agent Runtime](https://docs.openclaw.ai/concepts/agent). *   [Agent Loop](https://docs.openclaw.ai/concepts
 
-### 补充 4
+###-补充-4
 
-- **Proposal for a Multimodal Multi-Agent System Using OpenClaw** (relevance: 74%)
+--**Proposal-for-a-Multimodal-Multi-Agent-System-Using-OpenClaw**-(relevance:-74%)
   https://medium.com/@gwrx2005/proposal-for-a-multimodal-multi-agent-system-using-openclaw-81f5e4488233
   The Gateway component continuously runs and binds to all configured channels (chat platforms or other input sou
 
@@ -543,6 +550,37 @@ OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using
 - **Run Multiple OpenClaw AI Agents with Elastic Scaling and Safe ...** (relevance: 71%)
   https://www.digitalocean.com/blog/openclaw-digitalocean-app-platform
   ## OpenClaw on App Platform: Built for always-on, multi-agent AI systems. For those teams, OpenClaw on DigitalOcean App Platform is the so
+
+
+## 常见问题 (FAQ)
+
+### Q: 本章内容是否需要前置知识？
+
+**A:** 建议先完成前面的章节，确保理解 OpenClaw 的基础概念和安装方式。
+
+### Q: 遇到命令执行错误怎么办？
+
+**A:** 请检查 OpenClaw 是否正确安装，运行 `openclaw --version` 确认版本。如问题持续，请参考故障排查章节或提交 GitHub Issue。
+
+### Q: 如何获取更多帮助？
+
+**A:** 可以通过以下渠道获取帮助：
+- OpenClaw GitHub Issues
+- ClawHub 社区讨论
+- 官方文档 FAQ 页面
+
+
+---
+
+## 参考来源
+
+| 来源 | 链接 | 可信度 | 说明 |
+|------|------|--------|------|
+| OpenClaw 官方文档 | https://docs.openclaw.com | A | 安装, 配置, 命令 |
+| OpenClaw GitHub 仓库 | https://github.com/anthropics/openclaw | A | 源码, Issues, Release |
+| ClawHub Skills 平台 | https://hub.openclaw.com | A | Skills, 市场, 安装 |
+| Docker 官方文档 | https://docs.docker.com | A | Docker, 容器, 部署 |
+| systemd 管理文档 | https://www.freedesktop.org/wiki/Software/systemd/ | A | systemd, 服务管理, 后台运行 |
 
 ## 本章小结
 
@@ -556,3 +594,7 @@ OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using
 ---
 [⬅️ 上一章：飞书集成与消息自动化](07-飞书集成与消息自动化.md) | [📑 目录](README.md) | [➡️ 下一章：故障排查与日志分析](09-故障排查与日志分析.md)
 ---
+
+---
+
+> **📖 章节导航** | [← 上一章：飞书集成与消息自动化](07-飞书集成与消息自动化.md) | [目录](README.md) | [下一章：故障排查与日志分析 →](09-故障排查与日志分析.md)

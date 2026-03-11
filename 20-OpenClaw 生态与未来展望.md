@@ -1,8 +1,12 @@
----
-[⬅️ 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [📑 目录](README.md) | [➡️ 附录：多飞书多Agent实战](21-多飞书多Agent实战配置.md)
+> **📖 OpenClaw 中文实战教程** | [← 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [目录](README.md) | [下一章：多飞书多 Agent 实战配置 →](21-多飞书多Agent实战配置.md)
+
 ---
 
-# 第20章：OpenClaw 生态与未来展望
+---
+[⬅️ 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [📑 目录](README.md) | [➡️ 附录：多飞书多 Agent 实战](21-多飞书多Agent实战配置.md)
+---
+
+# 第 20 章：OpenClaw 生态与未来展望
 
 > **难度**: ⭐⭐ 中级 | **预计阅读**: 18 分钟 | **前置章节**: 建议完成全部前置章节
 
@@ -30,6 +34,7 @@
   - [行业应用趋势](#行业应用趋势)
 - [20.5 与其他框架互操作](#205-与其他框架互操作)
   - [LangChain 集成](#langchain-集成)
+
   - [CrewAI 对比](#crewai-对比)
   - [AutoGen 对比](#autogen-对比)
   - [框架全景对比](#框架全景对比)
@@ -59,7 +64,7 @@ OpenClaw 的开源生态由多个相互协作的项目组成：
 │         │                │                 │        │
 │  ┌──────▼──────┐  ┌──────▼───────┐  ┌─────▼─────┐  │
 │  │  gateway    │  │  skill-sdk   │  │  mcp-tools │  │
-│  │  (网关服务)  │  │  (开发工具包) │  │  (MCP集成)  │  │
+│  │  (网关服务)  │  │  (开发工具包) │  │  (MCP 集成)  │  │
 │  └─────────────┘  └──────────────┘  └───────────┘  │
 │                                                     │
 │  ┌─────────────┐  ┌──────────────┐  ┌───────────┐  │
@@ -68,7 +73,7 @@ OpenClaw 的开源生态由多个相互协作的项目组成：
 │  │  (官方文档)   │  │  (本教程!)   │  │  (示例集)   │  │
 │  └─────────────┘  └──────────────┘  └───────────┘  │
 └─────────────────────────────────────────────────────┘
-```
+```bash
 
 | 项目 | 仓库 | 说明 | Stars |
 |------|------|------|-------|
@@ -111,7 +116,9 @@ openclaw skill info complex-task-automator
 # 描述: 复杂任务自动拆解与执行
 # 依赖: tavily-search, markdown-toolkit
 # 评分: ⭐⭐⭐⭐⭐ (4.8/5)
-```
+```bash
+
+## 工具链与周边项目
 
 ### 工具链与周边项目
 
@@ -149,7 +156,7 @@ jobs:
         run: openclaw skill publish
         env:
           CLAWHUB_TOKEN: ${{ secrets.CLAWHUB_TOKEN }}
-```
+```text
 
 ---
 
@@ -190,10 +197,12 @@ Closes #123"
 # 7. 推送并创建 Pull Request
 git push origin feature/my-new-feature
 # 在 GitHub 上创建 PR
-```
+```text
 
 > [!NOTE]
 > 提交信息遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范：`feat:` (新功能)、`fix:` (修复)、`docs:` (文档)、`refactor:` (重构)、`test:` (测试)。
+
+## 贡献文档
 
 ### 贡献文档
 
@@ -213,7 +222,7 @@ openclaw-docs/
 │   └── en/                 # 英文（默认）
 ├── blog/                    # 博客文章
 └── docusaurus.config.js     # 站点配置
-```
+```text
 
 ```bash
 # 本地预览文档
@@ -225,7 +234,9 @@ npm start
 # 编辑文档后提交
 git add docs/
 git commit -m "docs: add guide for multi-agent configuration"
-```
+```bash
+
+## 贡献 Skills
 
 ### 贡献 Skills
 
@@ -261,6 +272,7 @@ cat > SKILL.md << 'EOF'
 - 功能列表项 2
 
 ## 工具
+
 ### tool_name
 - 描述: 工具的功能描述
 - 参数:
@@ -272,7 +284,7 @@ cat > SKILL.md << 'EOF'
 {
   "api_key": "your-api-key"
 }
-```
+```bash
 
 ## 依赖
 - Node.js >= 18
@@ -284,7 +296,9 @@ claw-test --verbose
 # 5. 发布到 ClawHub
 openclaw skill publish
 # 首次发布需要登录 ClawHub 账号
-```
+```text
+
+## 社区渠道
 
 ### 社区渠道
 
@@ -337,7 +351,7 @@ openclaw skill publish
                │  • 性能优化
 
 ═══════════════════════════════════════════════════════════
-```
+```text
 
 | 版本 | 发布时间 | 里程碑 | 关键特性 |
 |------|---------|--------|---------|
@@ -369,6 +383,7 @@ openclaw skill publish
         "可视化 Skill 编辑器",
         "交互式调试工具",
         "Skill 市场评分与评论系统",
+
         "本地 Playground（Web UI）"
       ]
     },
@@ -384,7 +399,7 @@ openclaw skill publish
     }
   }
 }
-```
+```text
 
 ### 长期愿景
 
@@ -405,7 +420,7 @@ openclaw skill publish
     │   🏢 企业级的安全与可靠性                  │
     │                                          │
     └──────────────────────────────────────────┘
-```
+```bash
 
 ---
 
@@ -429,7 +444,7 @@ L1 对话          L2 工具          L3 规划         L4 学习         L5 自
   "嗨，你好"      "查一下天气"     "帮我完成        "记住我的       "我自己
                                    这个项目"       偏好并优化"     监控和处理"
      🤖              🔧              📋              🧠              🚀
-```
+```text
 
 > [!NOTE]
 > OpenClaw 当前已覆盖 L1-L4 全部阶段，并通过 Cron 调度 + 飞书集成 + 审批机制初步实现 L5 自主运行能力。
@@ -458,7 +473,7 @@ L1 对话          L2 工具          L3 规划         L4 学习         L5 自
 │        │ (调度中心) │                     │
 │        └──────────┘                     │
 └──────────────────────────────────────────┘
-```
+```text
 
 OpenClaw 的多 Agent 配置支持这种协作模式：
 
@@ -482,6 +497,7 @@ OpenClaw 的多 Agent 配置支持这种协作模式：
         "name": "executor",
         "role": "代码编写和任务执行",
         "model": "claude-3-5-sonnet",
+
         "skills": ["code-analyzer", "git-helper"]
       },
       {
@@ -499,7 +515,7 @@ OpenClaw 的多 Agent 配置支持这种协作模式：
     ]
   }
 }
-```
+```text
 
 ### 工具使用与 MCP
 
@@ -527,7 +543,9 @@ openclaw mcp list
 
 # 查看特定工具详情
 openclaw mcp info github.create_pull_request
-```
+```bash
+
+## 行业应用趋势
 
 ### 行业应用趋势
 
@@ -564,7 +582,7 @@ import sys
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 prompt = PromptTemplate(
     input_variables=["topic"],
-    template="请为以下主题生成一份结构化的分析报告：\n\n主题: {topic}\n\n报告要求：\n1. 概述\n2. 关键数据\n3. 趋势分析\n4. 建议"
+    template="请为以下主题生成一份结构化的分析报告：\n\n 主题: {topic}\n\n 报告要求：\n1. 概述\n2. 关键数据\n3. 趋势分析\n4. 建议"
 )
 chain = LLMChain(llm=llm, prompt=prompt)
 
@@ -591,7 +609,7 @@ if __name__ == "__main__":
         except Exception as e:
             print(json.dumps({"status": "error", "message": str(e)}))
             sys.stdout.flush()
-```
+```text
 
 对应的 MCP 配置：
 
@@ -607,7 +625,9 @@ if __name__ == "__main__":
     }
   }
 }
-```
+```bash
+
+## CrewAI 对比
 
 ### CrewAI 对比
 
@@ -619,7 +639,7 @@ if __name__ == "__main__":
 | **工具系统** | Skills + MCP | LangChain Tools |
 | **记忆** | 文件系统 + Markdown | 短期/长期记忆 API |
 | **部署** | 独立服务、飞书集成 | Python 脚本执行 |
-| **社区** | 新兴社区 | 活跃Python社区 |
+| **社区** | 新兴社区 | 活跃 Python 社区 |
 | **适合场景** | 长期运行的企业 Agent | 任务型多角色协作 |
 
 ```python
@@ -645,7 +665,9 @@ result = crew.kickoff()
 # 在 AGENTS.md 中定义角色，通过飞书/CLI 触发
 # Agent 持续运行，记忆跨会话保持
 # 通过 Skills 扩展工具能力
-```
+```text
+
+## AutoGen 对比
 
 ### AutoGen 对比
 
@@ -678,7 +700,7 @@ result = crew.kickoff()
                ─────────┼──────────────────▶
                         │           易用性
                         │
-```
+```text
 
 > [!TIP]
 > 框架之间不是非此即彼的关系。通过 MCP 协议，OpenClaw 可以作为"执行平台"，将 LangChain/CrewAI 的 Chain 作为工具集成进来，实现优势互补。
@@ -727,11 +749,12 @@ Closes #456"
 
 # Step 8: 推送并创建 PR
 git push origin fix/typo-in-readme
-```
+```text
 
 PR 模板示例：
 
 ```markdown
+
 ## 描述
 修复 README.md 中安装章节的拼写错误。
 
@@ -750,7 +773,7 @@ PR 模板示例：
 
 ## 关联 Issue
 Closes #456
-```
+```text
 
 ### 成为 Skill 开发者
 
@@ -770,7 +793,7 @@ Closes #456
 5️⃣  发布到 ClawHub          ──▶  获得社区反馈，迭代优化
        │
 6️⃣  维护和推广              ──▶  回应 Issue、编写文档、分享经验
-```
+```text
 
 ```bash
 # 快速创建一个 Skill 项目
@@ -788,7 +811,9 @@ echo "
   [ ] 代码通过 claw-lint 检查
   [ ] package.json 版本号和描述正确
 "
-```
+```text
+
+## 参与社区治理
 
 ### 参与社区治理
 
@@ -809,9 +834,9 @@ echo "
    访客        用户       贡献者          审查者        维护者
    │           │          │              │             │
    │           │          │              │             ▼
-   浏览       使用       提交PR         审查PR      项目决策
-   文档       Agent     修Bug/加功能    指导新人     版本发布
-```
+   浏览       使用       提交 PR         审查 PR      项目决策
+   文档       Agent     修 Bug/加功能    指导新人     版本发布
+```bash
 
 ---
 
@@ -822,7 +847,7 @@ echo "
 1. 浏览 ClawHub 上的 Skill 列表，找到 3 个你感兴趣的 Skills：
 ```bash
 openclaw skill search --limit 30
-```
+```text
 
 2. 选择一个 Skill，阅读其 SKILL.md 源码，分析其工具定义结构。
 
@@ -834,7 +859,7 @@ openclaw skill search --limit 30
 ```bash
 claw-dev init hello-world-skill --template basic
 cd hello-world-skill
-```
+```text
 
 2. 实现一个简单的工具，例如"生成随机名言"或"日期格式转换"。
 
@@ -842,7 +867,7 @@ cd hello-world-skill
 ```bash
 claw-test --verbose
 claw-lint .
-```
+```text
 
 ### 练习 3：参与社区贡献
 
@@ -857,7 +882,7 @@ claw-lint .
 1. 安装 LangChain 或 CrewAI（如果你有 Python 环境）：
 ```bash
 pip install langchain crewai
-```
+```text
 
 2. 分别用 OpenClaw 和另一个框架完成同一个任务（例如"搜索并总结某个技术话题"）。
 
@@ -898,6 +923,35 @@ OpenClaw's 2026 roadmap focuses on API integration, automation delivery, and ent
   https://dev.to/sebconejo/the-openclaw-ecosystem-is-exploding-i-mapped-the-key-players-actually-gaining-traction-52bi
   ## DEV Community. Cover image for The OpenClaw ecosystem is exploding. I mapped the key pl
 
+
+## 常见问题 (FAQ)
+
+### Q: 本章内容是否需要前置知识？
+
+**A:** 建议先完成前面的章节，确保理解 OpenClaw 的基础概念和安装方式。
+
+### Q: 遇到命令执行错误怎么办？
+
+**A:** 请检查 OpenClaw 是否正确安装，运行 `openclaw --version` 确认版本。如问题持续，请参考故障排查章节或提交 GitHub Issue。
+
+### Q: 如何获取更多帮助？
+
+**A:** 可以通过以下渠道获取帮助：
+- OpenClaw GitHub Issues
+- ClawHub 社区讨论
+- 官方文档 FAQ 页面
+
+
+---
+
+## 参考来源
+
+| 来源 | 链接 | 说明 |
+|------|------|------|
+| OpenClaw 官方文档 | https://docs.openclaw.com | 官方安装与配置手册 |
+| OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
+| ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
+
 ## 本章小结
 
 - **开源生态**：OpenClaw 围绕核心引擎构建了完整的开源生态——Gateway 网关、ClawHub 技能市场、Browser Relay、SDK 工具链和丰富的文档资源。
@@ -931,6 +985,7 @@ OpenClaw's 2026 roadmap focuses on API integration, automation delivery, and ent
 ║   ✅ 性能优化与成本控制                                    ║
 ║   ✅ 团队协作与社区贡献                                    ║
 ║                                                          ║
+
 ║   🚀 接下来的旅程由你来书写！                              ║
 ║                                                          ║
 ║   - 开发你的第一个 Skill 并发布到 ClawHub                  ║
@@ -946,5 +1001,9 @@ OpenClaw's 2026 roadmap focuses on API integration, automation delivery, and ent
 > **本教程由 OpenClaw Agent 自动生成并持续优化。如果你觉得有帮助，请给项目一个 ⭐ Star！**
 
 ---
-[⬅️ 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [📑 目录](README.md) | [➡️ 附录：多飞书多Agent实战](21-多飞书多Agent实战配置.md)
+[⬅️ 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [📑 目录](README.md) | [➡️ 附录：多飞书多 Agent 实战](21-多飞书多Agent实战配置.md)
 ---
+
+---
+
+> **📖 章节导航** | [← 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [目录](README.md) | [下一章：多飞书多 Agent 实战配置 →](21-多飞书多Agent实战配置.md)
