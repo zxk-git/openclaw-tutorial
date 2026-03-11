@@ -517,10 +517,6 @@ openclaw agents list --verbose
 ---
 
 
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-09
-
 ### 补充 1
 
 OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using agents for multi-step task execution. It operates as a multi-agent system, allowing multiple agents to manage different channels and tasks. It is designed for always-on, scalable AI agent deployments.

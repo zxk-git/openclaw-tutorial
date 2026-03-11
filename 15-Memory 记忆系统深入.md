@@ -1044,10 +1044,6 @@ vim ~/.openclaw/workspace/memory/2026-03-06-my-memory.md
 ---
 
 
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-10
-
 ### 补充 1
 
 OpenClaw's memory system uses vector embeddings for semantic search, combining BM25 and vector search for efficient retrieval. It supports per-agent SQLite storage and experimental QMD backend. Memory tools include automatic flushing and vector memory search.

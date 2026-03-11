@@ -552,10 +552,6 @@ openclaw chat --skill my-awesome-skill
 ---
 
 
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-09
-
 ### 补充 1
 
 OpenClaw skills are modular tools that enhance AI agent functionality; the most popular include web search and GitHub integration; beware of malicious skills found in ClawHub.
@@ -585,10 +581,6 @@ OpenClaw skills are modular tools that enhance AI agent functionality; the most 
   Link to What is Network Security? Learn about the fundamentals of network security and how to protect your organizatio
 
 
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-09
-
 ### 补充 1
 
 - **Best ClawHub Skills: A Complete Guide - DataCamp** (relevance: 100%)
@@ -617,10 +609,6 @@ OpenClaw skills are modular tools that enhance AI agent functionality; the most 
 
 OpenClaw skill sharing community includes LobeHub and GitHub repositories for skill installation and reviews. Essential skills are available for project management and coding assistance. The community provides extensive documentation and support.
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-10
 
 ### 补充 1
 

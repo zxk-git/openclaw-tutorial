@@ -452,10 +452,6 @@ A: 不会冲突。OpenClaw 的 Skill 系统基于目录隔离，各 Skill 独立
 ---
 
 
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-09
-
 ### 补充 1
 
 To install OpenClaw skills, use ClawHub or the macOS app, which installs them on the gateway host. Essential skills include workflow automation and web search tools.
@@ -484,10 +480,6 @@ To install OpenClaw skills, use ClawHub or the macOS app, which installs them on
   https://nwosunneoma.medium.com/setting-up-skills-in-openclaw-d043b76303be
   When creating your SKILL.md, ensure that it follows what Openclaw expects — name, description, and metadata. Then I modified AGENTS.md and SOU
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-09
 
 ### 补充 1
 
@@ -518,10 +510,6 @@ ClawHub is a marketplace for OpenClaw AI agents to publish and share skill bundl
   # ClawHub. ## Overview. Skill registry for OpenClaw agents: publish, version, and install AgentSkills bundles with semantic (vector) search and CLI tooling. ### Best For Professions:. ClawHub is a skill regi
 
 
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-10
-
 ### 补充 1
 
 OpenClaw skills are modular components that enhance AI agent functionality; they are installed via `npx clawhub install <skill-slug>`. Skills are managed remotely on the gateway host, not locally on macOS.
@@ -548,10 +536,6 @@ OpenClaw skills are modular components that enhance AI agent functionality; they
 
 ClawHub is a marketplace for OpenClaw agents, allowing developers to publish and version AgentSkills bundles. It uses semantic search and scanning by VirusTotal to enhance security. Beware of malicious skills disguised as legitimate tools.
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-10
 
 ### 补充 1
 
@@ -594,10 +578,6 @@ ClawHub is a marketplace for OpenClaw agents, allowing developers to publish and
 | OpenClaw GitHub 仓库 | https://github.com/anthropics/openclaw | A | 源码, Issues, Release |
 | ClawHub Skills 平台 | https://hub.openclaw.com | A | Skills, 市场, 安装 |
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-11
 
 ### 补充 1
 
