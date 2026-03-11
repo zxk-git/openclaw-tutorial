@@ -1,10 +1,8 @@
-> **📖 OpenClaw 中文实战教程** | [← 上一章：部署与环境初始化](02-部署与环境初始化.md) | [目录](README.md) | [下一章：Skills 安装与管理实践 →](04-Skills 安装与管理实践.md)
+<div align="center">
 
----
+[← 第 02 章](02-部署与环境初始化.md) · [📑 目录](README.md) · [📋 大纲](OUTLINE.md) · [第 04 章 →](04-Skills 安装与管理实践.md)
 
----
-[⬅️ 上一章：部署与环境初始化](02-部署与环境初始化.md) | [📑 目录](README.md) | [➡️ 下一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md)
----
+</div>
 
 # 第 3 章：Skills 插件体系与批量开发
 
@@ -807,9 +805,9 @@ An OpenClaw SKILL.md file defines a skill's metadata and instructions, including
 遇到问题时，善用 `openclaw doctor` 进行诊断，配合 `openclaw logs --follow` 追踪 Agent 加载与匹配 Skill 的过程。
 
 ---
-[⬅️ 上一章：部署与环境初始化](02-部署与环境初始化.md) | [📑 目录](README.md) | [➡️ 下一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md)
----
 
----
+<div align="center">
 
-> **📖 章节导航** | [← 上一章：部署与环境初始化](02-部署与环境初始化.md) | [目录](README.md) | [下一章：Skills 安装与管理实践 →](04-Skills 安装与管理实践.md)
+[← 上一章：部署与环境初始化](02-部署与环境初始化.md) · [📑 返回目录](README.md) · [下一章：Skills 安装与管理实践 →](04-Skills 安装与管理实践.md)
+
+</div>

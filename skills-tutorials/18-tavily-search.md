@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Summarize](17-summarize.md) | [📑 Skills 教程目录](README.md)
 ---
@@ -122,4 +128,8 @@ Tavily (AI 优化) → Exa (神经搜索) → DDG (免费降级) → Multi Searc
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

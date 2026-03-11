@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：PowerPoint PPTX](13-powerpoint-pptx.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Self-Improving Agent](15-self-improving-agent.md)
 ---
@@ -151,4 +157,8 @@ workspace/
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

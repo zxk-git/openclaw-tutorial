@@ -1,11 +1,20 @@
+<div align="center">
+
 # 🦞 OpenClaw 实战教程 Wiki
 
-> **从零到精通的 OpenClaw Agent 自动化开发指南**  
-> 21 章 + 18 个 Skills 教程 · 四大部分 · 质量评分 98.1/100 · 自动化持续更新
+**从零到精通的 OpenClaw Agent 自动化开发指南**
+
+[![章节](https://img.shields.io/badge/章节-21-blue)]() [![Skills](https://img.shields.io/badge/Skills_教程-18-green)]() [![质量](https://img.shields.io/badge/质量评分-98.1%2F100-brightgreen)]()
+
+21 章 + 18 个 Skills 教程 · 四大部分 · 持续自动更新
+
+[[快速开始|⚡ 快速开始]] · [[FAQ|❓ FAQ]] · [[术语表|📖 术语表]] · [[Skills 教程合集|🧩 Skills]]
+
+</div>
 
 ---
 
-## 📚 快速导航
+## 📚 教程章节总览
 
 ### 🟢 第一部分：基础入门（第 1-5 章）
 
@@ -34,46 +43,67 @@
 | [[11 高级场景 第三方平台集成]] | ⭐⭐⭐⭐ | 企业平台对接 |
 | [[12 实践案例与常见问题]] | ⭐⭐⭐ | 真实案例、FAQ |
 | [[13 教程自动更新与仓库维护]] | ⭐⭐ | 自动更新机制 |
-| [[安全与权限管理|14 安全与权限管理]] | ⭐⭐⭐ | Credential、审批、沙箱隔离 |
-| [[Memory 记忆系统深入|15 Memory 记忆系统深入]] | ⭐⭐⭐ | 记忆架构、持久化、检索 |
+| [[14 安全与权限管理]] | ⭐⭐⭐ | Credential、审批、沙箱隔离 |
+| [[15 Memory 记忆系统深入]] | ⭐⭐⭐ | 记忆架构、持久化、检索 |
 
 ### 🔴 第四部分：专家实战（第 16-20 章）
 
 | 章节 | 难度 | 说明 |
 |------|------|------|
-| [[MCP 工具协议与自定义集成|16 MCP 工具协议与自定义集成]] | ⭐⭐⭐⭐ | MCP 规范、Server 开发 |
-| [[浏览器自动化与网页交互|17 浏览器自动化与网页交互]] | ⭐⭐⭐ | Browser Relay、网页抓取 |
-| [[性能优化与规模化部署|18 性能优化与规模化部署]] | ⭐⭐⭐⭐ | Token 优化、监控告警 |
-| [[团队协作与企业部署|19 团队协作与企业部署]] | ⭐⭐⭐ | 多用户、私有化部署 |
-| [[OpenClaw 生态与未来展望|20 OpenClaw 生态与未来展望]] | ⭐⭐ | 开源生态、行业趋势 |
+| [[16 MCP 工具协议与自定义集成]] | ⭐⭐⭐⭐ | MCP 规范、Server 开发 |
+| [[17 浏览器自动化与网页交互]] | ⭐⭐⭐ | Browser Relay、网页抓取 |
+| [[18 性能优化与规模化部署]] | ⭐⭐⭐⭐ | Token 优化、监控告警 |
+| [[19 团队协作与企业部署]] | ⭐⭐⭐ | 多用户、私有化部署 |
+| [[20 OpenClaw 生态与未来展望]] | ⭐⭐ | 开源生态、行业趋势 |
 
 ### 🛠️ 附录：实战专题
 
 | 章节 | 难度 | 说明 |
 |------|------|------|
-| [[多飞书多Agent实战配置|21 多飞书多Agent实战配置]] | ⭐⭐⭐⭐ | 多飞书App、独立Agent、路由 |
+| [[21 多飞书多Agent实战配置]] | ⭐⭐⭐⭐ | 多飞书App、独立Agent、路由 |
 
-### 📚 Skills 安装与使用教程
+### 🧩 Skills 安装与使用教程
 
-18 个已安装 Skills 的完整教程，包含安装、配置、核心用法和 FAQ。
+> 18 个已安装 Skills 的完整教程 → 详见 [[Skills 教程合集]]
 
-| Skill | 类型 | 教程 |
-|-------|------|------|
-| McPorter | MCP 工具管理 | [[McPorter 教程|Skills 01 McPorter]] |
-| DDG / Exa / Tavily / Multi Search | 搜索引擎 | [[Skills 教程合集|Skills 教程合集]] |
-| GitHub / Notion / GoG | 平台集成 | [[Skills 教程合集|Skills 教程合集]] |
-| Proactive Agent / Self-Improving | Agent 增强 | [[Skills 教程合集|Skills 教程合集]] |
-| Summarize / Markdown Converter | 内容处理 | [[Skills 教程合集|Skills 教程合集]] |
+| # | Skill | 类型 | 简介 |
+|---|-------|------|------|
+| 01 | **McPorter** | 🔧 MCP 工具管理 | MCP Server 安装/管理/调试 |
+| 02 | **Complex Task Automator** | ⚙️ 任务自动化 | 全链路任务自动化引擎 |
+| 03 | **DDG Web Search** | 🔍 搜索引擎 | DuckDuckGo 零 API Key 搜索 |
+| 04 | **Exa Web Search** | 🔍 搜索引擎 | AI 神经搜索引擎（免费） |
+| 05 | **File Search** | 📂 文件搜索 | fd + ripgrep 快速搜索 |
+| 06 | **Find Skills** | 🧩 技能管理 | 技能发现与安装助手 |
+| 07 | **GitHub** | 🔗 平台集成 | gh CLI 集成 |
+| 08 | **GoG** | 🔗 平台集成 | Google Workspace CLI |
+| 09 | **Markdown Converter** | 📝 内容处理 | 多格式转 Markdown |
+| 10 | **Memory** | 🧠 记忆系统 | 无限分类记忆系统 |
+| 11 | **Multi Search Engine** | 🔍 搜索引擎 | 17 搜索引擎集成 |
+| 12 | **Notion** | 🔗 平台集成 | Notion API 集成 |
+| 13 | **PowerPoint PPTX** | 📝 内容处理 | PowerPoint 自动化生成 |
+| 14 | **Proactive Agent** | 🤖 Agent 增强 | 主动预测型 Agent 架构 |
+| 15 | **Self-Improving Agent** | 🤖 Agent 增强 | 持续自我改进系统 |
+| 16 | **Skill Vetter** | 🔒 安全审核 | 技能安全审核协议 |
+| 17 | **Summarize** | 📝 内容处理 | 多源快速摘要工具 |
+| 18 | **Tavily Search** | 🔍 搜索引擎 | AI 优化网页搜索 |
 
 ---
 
 ## 🗺️ 学习路线
 
-```
-入门：Ch01 → Ch02 → Ch03 → Ch04 → Ch05
-实战：Ch06 → Ch07 → Ch08
-高级：Ch09 → Ch10 → Ch11 → Ch12 → Ch13
-```
+> 根据你的经验选择合适的学习路径
+
+### 📍 入门路线（新手推荐）
+> Ch01 → Ch02 → Ch03 → Ch04 → Ch05
+
+### 📍 实战路线（有基础）
+> Ch06 → Ch07 → Ch08
+
+### 📍 进阶路线（中级用户）
+> Ch09 → Ch10 → Ch11 → Ch12 → Ch13
+
+### 📍 专家路线（高级用户）
+> Ch14 → Ch15 → Ch16 → Ch17 → Ch18 → Ch19 → Ch20
 
 ## 🎯 适合谁
 
@@ -93,5 +123,10 @@
 
 ---
 
-> 本教程由 AI Agent (complex-task-automator) 自动生成并持续优化。  
-> 仓库地址：[openclaw-tutorial-auto](https://github.com/zxk-git/openclaw-tutorial-auto)
+<div align="center">
+
+📅 本教程由 AI Agent (`complex-task-automator`) 自动生成并持续优化  
+🔗 仓库地址：[openclaw-tutorial-auto](https://github.com/zxk-git/openclaw-tutorial-auto)  
+📖 [[快速开始|⚡ 快速开始]] · [[FAQ|❓ FAQ]] · [[术语表|📖 术语表]] · [[Skills 教程合集|🧩 Skills]]
+
+</div>

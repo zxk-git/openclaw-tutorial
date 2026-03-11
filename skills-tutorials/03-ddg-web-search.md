@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Complex Task Automator](02-complex-task-automator.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Exa Web Search](04-exa-web-search.md)
 ---
@@ -113,4 +119,8 @@ const page = web_fetch({
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

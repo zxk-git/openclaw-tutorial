@@ -1,10 +1,8 @@
-> **📖 OpenClaw 中文实战教程** | [← 上一章：Skills 插件体系与批量开发](03-Skills 插件体系与批量开发.md) | [目录](README.md) | [下一章：ClawHub 平台与技能分发 →](05-ClawHub 平台与技能分发.md)
+<div align="center">
 
----
+[← 第 03 章](03-Skills 插件体系与批量开发.md) · [📑 目录](README.md) · [📋 大纲](OUTLINE.md) · [第 05 章 →](05-ClawHub 平台与技能分发.md)
 
----
-[⬅️ 上一章：Skills 插件体系与批量开发](03-Skills 插件体系与批量开发.md) | [📑 目录](README.md) | [➡️ 下一章：ClawHub 平台与技能分发](05-ClawHub 平台与技能分发.md)
----
+</div>
 
 # 第 4 章：Skills 安装与管理实践
 
@@ -673,9 +671,9 @@ ClawHub is a marketplace for OpenClaw agents to publish and sell skills. It uses
 - 遇到问题时，善用 `openclaw doctor` 进行诊断。
 
 ---
-[⬅️ 上一章：Skills 插件体系与批量开发](03-Skills 插件体系与批量开发.md) | [📑 目录](README.md) | [➡️ 下一章：ClawHub 平台与技能分发](05-ClawHub 平台与技能分发.md)
----
 
----
+<div align="center">
 
-> **📖 章节导航** | [← 上一章：Skills 插件体系与批量开发](03-Skills 插件体系与批量开发.md) | [目录](README.md) | [下一章：ClawHub 平台与技能分发 →](05-ClawHub 平台与技能分发.md)
+[← 上一章：Skills 插件体系与批量开发](03-Skills 插件体系与批量开发.md) · [📑 返回目录](README.md) · [下一章：ClawHub 平台与技能分发 →](05-ClawHub 平台与技能分发.md)
+
+</div>

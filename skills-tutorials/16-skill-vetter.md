@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Self-Improving Agent](15-self-improving-agent.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Summarize](17-summarize.md)
 ---
@@ -123,4 +129,8 @@ clawdhub install skill-vetter
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

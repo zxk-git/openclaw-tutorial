@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：File Search](05-file-search.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：GitHub](07-github.md)
 ---
@@ -75,4 +81,8 @@ Agent 会在以下情况自动建议搜索技能：
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

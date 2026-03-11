@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：McPorter](01-mcporter.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：DDG Web Search](03-ddg-web-search.md)
 ---
@@ -101,4 +107,8 @@ ls ~/.openclaw/workspace/skills/complex-task-automator/
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

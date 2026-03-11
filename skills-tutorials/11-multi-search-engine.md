@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Memory](10-memory.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Notion](12-notion.md)
 ---
@@ -139,4 +145,8 @@ web_fetch({ url: "https://duckduckgo.com/html/?q=!so+python+async+await" })
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

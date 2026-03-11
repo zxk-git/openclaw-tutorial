@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Complex Task Automator](02-complex-task-automator.md)
 ---
@@ -133,4 +139,8 @@ mcporter generate-types --server <name>
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

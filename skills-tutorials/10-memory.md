@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Markdown Converter](09-markdown-converter.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Multi Search Engine](11-multi-search-engine.md)
 ---
@@ -119,4 +125,8 @@ rg "Next.js" ~/memory/
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

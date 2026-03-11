@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Proactive Agent](14-proactive-agent.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Skill Vetter](16-skill-vetter.md)
 ---
@@ -175,4 +181,8 @@ OpenClaw 提供工具在会话间共享学习：
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

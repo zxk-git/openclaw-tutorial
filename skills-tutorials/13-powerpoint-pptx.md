@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Notion](12-notion.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Proactive Agent](14-proactive-agent.md)
 ---
@@ -117,4 +123,8 @@ slide.shapes.add_picture("logo.png", Inches(1), Inches(1), Inches(3), Inches(3))
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

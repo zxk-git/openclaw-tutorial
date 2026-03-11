@@ -1,10 +1,8 @@
-> **📖 OpenClaw 中文实战教程** | [← 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [目录](README.md) | [下一章：自动化命令与脚本集成 →](06-自动化命令与脚本集成.md)
+<div align="center">
 
----
+[← 第 04 章](04-Skills 安装与管理实践.md) · [📑 目录](README.md) · [📋 大纲](OUTLINE.md) · [第 06 章 →](06-自动化命令与脚本集成.md)
 
----
-[⬅️ 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [📑 目录](README.md) | [➡️ 下一章：自动化命令与脚本集成](06-自动化命令与脚本集成.md)
----
+</div>
 
 # 第 5 章：ClawHub 平台与技能分发
 
@@ -726,9 +724,9 @@ OpenClaw ClawHub skills distribution includes legitimate tools and numerous mali
 > 下一章：[06-自动化命令与脚本集成](06-自动化命令与脚本集成.md)
 
 ---
-[⬅️ 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [📑 目录](README.md) | [➡️ 下一章：自动化命令与脚本集成](06-自动化命令与脚本集成.md)
----
 
----
+<div align="center">
 
-> **📖 章节导航** | [← 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) | [目录](README.md) | [下一章：自动化命令与脚本集成 →](06-自动化命令与脚本集成.md)
+[← 上一章：Skills 安装与管理实践](04-Skills 安装与管理实践.md) · [📑 返回目录](README.md) · [下一章：自动化命令与脚本集成 →](06-自动化命令与脚本集成.md)
+
+</div>

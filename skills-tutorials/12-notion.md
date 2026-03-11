@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Multi Search Engine](11-multi-search-engine.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：PowerPoint PPTX](13-powerpoint-pptx.md)
 ---
@@ -133,4 +139,8 @@ curl -X POST 'https://api.notion.com/v1/pages' \
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

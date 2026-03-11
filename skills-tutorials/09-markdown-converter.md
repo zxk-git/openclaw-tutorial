@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：GoG](08-gog.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Memory](10-memory.md)
 ---
@@ -96,4 +102,8 @@ uvx markitdown scan.pdf -d -e "https://your-resource.cognitiveservices.azure.com
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

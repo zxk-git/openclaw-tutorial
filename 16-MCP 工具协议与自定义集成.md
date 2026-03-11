@@ -1,10 +1,8 @@
-> **📖 OpenClaw 中文实战教程** | [← 上一章：Memory 记忆系统深入](15-Memory 记忆系统深入.md) | [目录](README.md) | [下一章：浏览器自动化与网页交互 →](17-浏览器自动化与网页交互.md)
+<div align="center">
 
----
+[← 第 15 章](15-Memory 记忆系统深入.md) · [📑 目录](README.md) · [📋 大纲](OUTLINE.md) · [第 17 章 →](17-浏览器自动化与网页交互.md)
 
----
-[⬅️ 上一章：Memory 记忆系统深入](15-Memory 记忆系统深入.md) | [📑 目录](README.md) | [➡️ 下一章：浏览器自动化与网页交互](17-浏览器自动化与网页交互.md)
----
+</div>
 
 # 第 16 章：MCP 工具协议与自定义集成
 
@@ -1325,9 +1323,9 @@ The Model Context Protocol (MCP) connects AI assistants to data sources, enablin
 - 遇到问题时，优先使用 `openclaw mcp logs` 查看日志，用 MCP Inspector 隔离测试。
 
 ---
-[⬅️ 上一章：Memory 记忆系统深入](15-Memory 记忆系统深入.md) | [📑 目录](README.md) | [➡️ 下一章：浏览器自动化与网页交互](17-浏览器自动化与网页交互.md)
----
 
----
+<div align="center">
 
-> **📖 章节导航** | [← 上一章：Memory 记忆系统深入](15-Memory 记忆系统深入.md) | [目录](README.md) | [下一章：浏览器自动化与网页交互 →](17-浏览器自动化与网页交互.md)
+[← 上一章：Memory 记忆系统深入](15-Memory 记忆系统深入.md) · [📑 返回目录](README.md) · [下一章：浏览器自动化与网页交互 →](17-浏览器自动化与网页交互.md)
+
+</div>

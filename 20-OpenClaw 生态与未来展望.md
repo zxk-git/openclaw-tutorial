@@ -1,10 +1,8 @@
-> **📖 OpenClaw 中文实战教程** | [← 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [目录](README.md) | [下一章：多飞书多 Agent 实战配置 →](21-多飞书多 Agent 实战配置.md)
+<div align="center">
 
----
+[← 第 19 章](19-团队协作与企业部署.md) · [📑 目录](README.md) · [📋 大纲](OUTLINE.md) · [第 21 章 →](21-多飞书多Agent实战配置.md)
 
----
-[⬅️ 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [📑 目录](README.md) | [➡️ 附录：多飞书多 Agent 实战](21-多飞书多 Agent 实战配置.md)
----
+</div>
 
 # 第 20 章：OpenClaw 生态与未来展望
 
@@ -1001,9 +999,9 @@ OpenClaw's 2026 roadmap focuses on API integration, automation delivery, and ent
 > **本教程由 OpenClaw Agent 自动生成并持续优化。如果你觉得有帮助，请给项目一个 ⭐ Star！**
 
 ---
-[⬅️ 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [📑 目录](README.md) | [➡️ 附录：多飞书多 Agent 实战](21-多飞书多 Agent 实战配置.md)
----
 
----
+<div align="center">
 
-> **📖 章节导航** | [← 上一章：团队协作与企业部署](19-团队协作与企业部署.md) | [目录](README.md) | [下一章：多飞书多 Agent 实战配置 →](21-多飞书多 Agent 实战配置.md)
+[← 上一章：团队协作与企业部署](19-团队协作与企业部署.md) · [📑 返回目录](README.md) · [下一章：多飞书多Agent实战配置 →](21-多飞书多Agent实战配置.md)
+
+</div>

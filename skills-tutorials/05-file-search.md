@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Exa Web Search](04-exa-web-search.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Find Skills](06-find-skills.md)
 ---
@@ -126,4 +132,8 @@ Debian/Ubuntu 上可能安装为 `fdfind`，运行 `alias fd=fdfind` 或使用 `
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

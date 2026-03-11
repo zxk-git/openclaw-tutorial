@@ -1,10 +1,8 @@
-> **📖 OpenClaw 中文实战教程** | [← 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [目录](README.md) |
+<div align="center">
 
----
+[← 第 20 章](20-OpenClaw 生态与未来展望.md) · [📑 目录](README.md) · [📋 大纲](OUTLINE.md)
 
----
-[⬅️ 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [📑 目录](README.md)
----
+</div>
 
 # 第 21 章：多飞书多 Agent 实战配置
 
@@ -681,9 +679,9 @@ OpenClaw integrates with Feishu for multi-bot collaboration, using appId/appSecr
 > 🔗 **下一步建议**：给新 Agent 配置专属 Cron 任务，或为不同 Agent 选择不同的 AI 模型（如 Claude vs GPT-4.1），实现能力互补。
 
 ---
-[⬅️ 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [📑 目录](README.md)
----
 
----
+<div align="center">
 
-> **📖 章节导航** | [← 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) | [目录](README.md) |
+[← 上一章：OpenClaw 生态与未来展望](20-OpenClaw 生态与未来展望.md) · [📑 返回目录](README.md)
+
+</div>

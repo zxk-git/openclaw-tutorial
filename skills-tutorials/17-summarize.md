@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Skill Vetter](16-skill-vetter.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Tavily Search](18-tavily-search.md)
 ---
@@ -133,4 +139,8 @@ summarize "https://example.com" --json
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

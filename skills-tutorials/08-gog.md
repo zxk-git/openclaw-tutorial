@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：GitHub](07-github.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：Markdown Converter](09-markdown-converter.md)
 ---
@@ -119,4 +125,8 @@ gog docs export <docId>
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>

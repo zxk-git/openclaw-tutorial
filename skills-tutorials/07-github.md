@@ -1,3 +1,9 @@
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
+
 ---
 [⬅️ 上一篇：Find Skills](06-find-skills.md) | [📑 Skills 教程目录](README.md) | [➡️ 下一篇：GoG](08-gog.md)
 ---
@@ -111,4 +117,8 @@ gh api repos/owner/repo --jq '{stars: .stargazers_count, forks: .forks_count}'
 
 ---
 
-> 📖 [返回 Skills 教程目录](README.md)
+<div align="center">
+
+[← Skills 目录](README.md) · [📑 主教程](../README.md)
+
+</div>
