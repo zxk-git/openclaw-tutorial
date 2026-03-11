@@ -1089,6 +1089,39 @@ OpenClaw's memory system uses vector embeddings for semantic search, combining B
 | OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
 | ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
 
+
+## 最新动态与补充
+
+> 📅 更新时间: 2026-03-11
+
+### 补充 1
+
+OpenClaw uses a hybrid memory system combining Markdown files and SQLite for persistent memory. It employs vector embeddings for semantic search and retrieval. The system aims to provide long-term memory for AI assistants.
+
+### 补充 2
+
+- **# [Idea] Enhancing Long-term Memory: A Dual-Layer Approach with ...** (relevance: 100%)
+  https://github.com/openclaw/openclaw/discussions/14050
+  After extensively using OpenClaw across multiple agents and workspaces, I've identified a critical limitation in the current memory retrieval system:
+
+### 补充 3
+
+- **Fixing OpenClaw's Memory with Knowledge Graphs - LinkedIn** (relevance: 100%)
+  https://www.linkedin.com/posts/akshay-pachaar_openclaws-memory-is-broken-heres-a-100-activity-7429562930917990400-n2DI
+  Under the hood, OpenClaw stores memory in plain Markdown files. Retrieval uses vector embedding
+
+### 补充 4
+
+- **2026 Complete Guide to OpenClaw memorySearch - DEV Community** (relevance: 100%)
+  https://dev.to/czmilo/2026-complete-guide-to-openclaw-memorysearch-supercharge-your-ai-assistant-49oc
+  # 2026 Complete Guide to OpenClaw memorySearch: Supercharge Your AI Assistant. # 2026 Complete Guide to OpenC
+
+### 补充 5
+
+- **Beyond the Chat: How OpenClaw's Hybrid Memory System Gives AI ...** (relevance: 100%)
+  https://levelup.gitconnected.com/beyond-the-chat-how-openclaws-hybrid-memory-system-gives-ai-a-real-brain-11a622901106
+  ## Level Up Coding. # Beyond the Chat: How OpenClaw’s Hybrid Memory System Gives AI a R
+
 ## 本章小结
 
 - **三种记忆**：工作记忆（会话级）、短期记忆（天/周级）、长期记忆（永久），从临时到持久逐级沉淀。
