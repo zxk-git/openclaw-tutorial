@@ -86,7 +86,7 @@ Gateway (端口 18789)
     ├── App ID: cli_a924fdf77ef7dcd5
     ├── Workspace: ~/.openclaw/workspace-coding/
     └── 角色: 代码专家（编程、审查、架构、调试）
-```text
+```
 
 ---
 
@@ -110,7 +110,7 @@ openclaw agents
 
 # 确认 feishu SDK
 ls /usr/lib/node_modules/openclaw/node_modules/@larksuiteoapi/
-```text
+```
 
 ---
 
@@ -182,7 +182,7 @@ OpenClaw 的飞书多账号使用 `channels.feishu.accounts` 嵌套对象：
     }
   }
 }
-```bash
+```
 
 #### 配置要点
 
@@ -210,7 +210,7 @@ OpenClaw 的飞书多账号使用 `channels.feishu.accounts` 嵌套对象：
     }
   }
 }
-```text
+```
 
 改为 accounts 嵌套结构（如上）。
 
@@ -221,7 +221,7 @@ openclaw channels add \
   --channel feishu \
   --account coding-bot \
   --name "Coding Bot"
-```bash
+```
 
 > ⚠️ **注意**：CLI `channels add` 会自动将现有单账号迁移到 `accounts.default`，但建议手动编辑确保配置准确。
 
@@ -233,7 +233,7 @@ openclaw gateway restart
 
 # 检查是否有配置错误
 openclaw channels list
-```text
+```
 
 正确输出应显示两个账号：
 
@@ -241,20 +241,20 @@ openclaw channels list
 Chat channels:
 - Feishu coding-bot (Coding Bot): configured, enabled
 - Feishu default: configured, enabled
-```text
+```
 
 ## 深度连接验证
 
 ```bash
 openclaw channels status --probe
-```text
+```
 
 期望输出：
 
 ```text
 - Feishu coding-bot (Coding Bot): enabled, configured, running, works
 - Feishu default: enabled, configured, running, works
-```text
+```
 
 ---
 
@@ -268,7 +268,7 @@ openclaw agents add coding \
   --bind feishu:coding-bot \
   --model github-copilot/gpt-4.1 \
   --non-interactive
-```text
+```
 
 这条命令自动完成：
 1. 在配置中注册新 Agent `coding`
@@ -283,13 +283,13 @@ openclaw agents set-identity \
   --agent coding \
   --name "代码助手" \
   --emoji "💻"
-```text
+```
 
 ### 验证创建结果
 
 ```bash
 openclaw agents
-```text
+```
 
 期望输出：
 
@@ -306,7 +306,7 @@ Agents:
   Workspace: ~/.openclaw/workspace-coding
   Model: github-copilot/gpt-4.1
   Routing: Feishu coding-bot
-```text
+```
 
 ---
 
@@ -351,7 +351,7 @@ Agents:
 - 直接给出可运行的代码，而非抽象建议
 - 中文沟通，代码注释使用英文
 - 遇到多种方案时，先推荐最佳实践
-```text
+```
 
 ### SOUL.md 示例
 
@@ -370,26 +370,26 @@ Agents:
 
 - 直接、简洁、专业
 - 中文沟通，代码注释英文
-```text
+```
 
 ### USER.md — 复用主工作空间内容
 
 ```bash
 # 直接从主工作空间复制
 cp ~/.openclaw/workspace/USER.md ~/.openclaw/workspace-coding/USER.md
-```text
+```
 
 ## 删除 BOOTSTRAP.md
 
 ```bash
 rm ~/.openclaw/workspace-coding/BOOTSTRAP.md
-```text
+```
 
 ### 创建 memory 目录
 
 ```bash
 mkdir -p ~/.openclaw/workspace-coding/memory
-```text
+```
 
 ---
 
@@ -412,7 +412,7 @@ OpenClaw 通过 `bindings` 数组将渠道账号映射到 Agent：
     }
   ]
 }
-```text
+```
 
 | 路由规则 | 匹配规则 | 目标 Agent |
 |----------|----------|------------|
@@ -430,19 +430,19 @@ openclaw agents bind --agent coding --bind feishu:coding-bot
 
 # 移除绑定
 openclaw agents unbind --agent coding --bind feishu:coding-bot
-```text
+```
 
 ## 应用配置
 
 ```bash
 openclaw gateway restart
-```text
+```
 
 ### 验证路由
 
 ```bash
 openclaw agents
-```text
+```
 
 确认 `coding` Agent 的 Routing 行显示 `Feishu coding-bot`。
 
@@ -472,7 +472,7 @@ openclaw message send \
   --account default \
   --target "oc_你的群聊 ID" \
   --message "🤖 小光报到！这是来自默认机器人的消息。"
-```text
+```
 
 ## 验证 Agent 路由
 
@@ -484,7 +484,7 @@ openclaw message send \
 
 ```bash
 openclaw channels logs --channel feishu | tail -20
-```text
+```
 
 ---
 
@@ -507,7 +507,7 @@ openclaw cron add \
   --channel feishu \
   --account coding-bot \
   --message "代码质量检查报告"
-```text
+```
 
 ## 编辑现有 Cron 任务
 
@@ -519,7 +519,7 @@ openclaw cron add \
   "accountId": "coding-bot",
   "target": "oc_群聊 ID"
 }
-```bash
+```
 
 ---
 
@@ -565,7 +565,7 @@ openclaw cron add \
     }
   }
 }
-```text
+```
 
 ### Q2: 230002 `Bot/User can NOT be out of the chat`
 

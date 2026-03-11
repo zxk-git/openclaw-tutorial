@@ -60,7 +60,7 @@ Gateway (端口 18789) ─── 统一入口
     ├── SOUL.md         → 结构化沟通风格
     ├── skills/         → 任务管理相关
     └── memory/         → 项目进展
-```text
+```
 
 ### 8.1.2 核心概念一览
 
@@ -91,7 +91,7 @@ Gateway (端口 18789) ─── 统一入口
 ```bash
 # 查看已注册的 Agent 列表
 openclaw agents list
-```text
+```
 
 ---
 
@@ -137,7 +137,7 @@ mkdir -p memory/ skills/ config/
 
 # 5. 验证 workspace 结构
 tree ~/.openclaw/agents/agent-2/workspace/
-```text
+```
 
 ## 8.2.2 Agent 配置参数详解
 
@@ -174,7 +174,7 @@ tree ~/.openclaw/agents/agent-2/workspace/
     }
   }
 }
-```text
+```
 
 配置完成后验证路由是否生效：
 
@@ -184,7 +184,7 @@ openclaw config validate
 
 # 查看当前生效的路由映射
 openclaw agents routes
-```text
+```
 
 ## 8.2.4 配置热加载
 
@@ -199,7 +199,7 @@ curl -X POST http://localhost:18789/admin/reload
 
 # 验证重载结果
 openclaw agents list --verbose
-```text
+```
 
 > [!TIP]
 > 热加载仅更新配置层面的变更（如路由规则、模型切换），Agent 的 workspace 文件变更（如 IDENTITY.md）会在下一次请求时自动读取，无需重载。
@@ -229,7 +229,7 @@ openclaw agents list --verbose
 ├── agents/
 │   ├── agent-1/workspace/       ← Agent 1 专属
 │   └── agent-2/workspace/       ← Agent 2 专属
-```text
+```
 
 创建共享记忆目录并初始化：
 
@@ -245,7 +245,7 @@ cat > ~/.openclaw/workspace/shared-memory/project-status.json << 'EOF'
   "sharedNotes": []
 }
 EOF
-```text
+```
 
 ## 8.3.3 消息转发
 
@@ -262,7 +262,7 @@ Gateway 支持将消息从一个 Agent 转发到另一个 Agent 处理：
     ]
   }
 }
-```text
+```
 
 路由规则按照从上到下的顺序匹配，第一条匹配的规则生效。`"default"` 规则作为兜底，处理所有未匹配的请求。
 
@@ -293,7 +293,7 @@ EOF
 
 # Step 3: 查看协作状态
 cat ~/.openclaw/workspace/shared-memory/project-status.json
-```text
+```
 
 ---
 
@@ -318,7 +318,7 @@ cat ~/.openclaw/workspace/shared-memory/project-status.json
     }
   }
 }
-```text
+```
 
 ### 8.4.2 监控命令
 
@@ -337,7 +337,7 @@ openclaw gateway status
 
 # 实时监控 Agent 日志输出
 openclaw logs --agent agent-1 --follow
-```bash
+```
 
 ## 8.4.3 性能调优建议
 
@@ -391,7 +391,7 @@ echo "=== 运营助手 ===" && ls ~/.openclaw/agents/ops-agent/workspace/
 
 # Step 4: 注册到 Gateway
 openclaw agents list
-```text
+```
 
 **验证要点**：确认两个 Agent 目录独立，`IDENTITY.md` 内容不同。
 
@@ -420,7 +420,7 @@ curl -s http://localhost:18789/api/chat \
 curl -s http://localhost:18789/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "运营报告：本周用户增长趋势"}' | jq .agentId
-```text
+```
 
 **验证要点**：包含"技术问题"的消息应路由到 tech-agent，包含"运营报告"的消息应路由到 ops-agent。
 
@@ -460,7 +460,7 @@ cat ~/.openclaw/workspace/shared-memory/reports/weekly-tech.md
 
 # Step 5: 查看协作状态
 openclaw agents stats
-```text
+```
 
 **验证要点**：共享目录中的文件可以被两个 Agent 正常读写，流水线数据传递正常。
 

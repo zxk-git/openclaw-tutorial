@@ -92,14 +92,14 @@ npx skills install tavily-search
 
 # 搜索可用技能
 npx skills find "关键词"
-```text
+```
 
 安装完成后，可通过以下命令确认技能已就绪：
 
 ```bash
 # 列出所有已安装的技能
 openclaw skills list
-```bash
+```
 
 ---
 
@@ -122,7 +122,7 @@ npx skills find "automation"
 
 # 查看技能详情（包括版本、依赖、作者等信息）
 npx skills info tavily-search
-```bash
+```
 
 ## 搜索参数说明
 
@@ -164,7 +164,7 @@ npx skills info tavily-search
   },
   "homepage": "https://skills.sh/tavily-search"
 }
-```text
+```
 
 ---
 
@@ -180,7 +180,7 @@ npx skills install tavily-search
 
 # 安装指定版本
 npx skills install tavily-search@1.2.0
-```text
+```
 
 安装完成后，技能文件会存放在本地 `~/.openclaw/workspace/skills/` 目录下。
 
@@ -191,7 +191,7 @@ npx skills install tavily-search@1.2.0
 ```bash
 # 列出所有已安装的技能及其版本
 openclaw skills list
-```text
+```
 
 ## 更新与卸载
 
@@ -203,7 +203,7 @@ npx skills update tavily-search
 
 # 卸载技能
 npx skills uninstall tavily-search
-```bash
+```
 
 ## 安装前后对比
 
@@ -230,7 +230,7 @@ settings:
   max_results: 5
   include_domains: []
   exclude_domains: []
-```text
+```
 
 也可以通过环境变量设置：
 
@@ -240,7 +240,7 @@ export TAVILY_API_KEY="tvly-xxxxxxxxxxxxxxxx"
 
 # 验证技能是否正常工作
 openclaw skills test tavily-search
-```bash
+```
 
 ---
 
@@ -280,7 +280,7 @@ permissions:
   - network
   - filesystem
 ---
-```text
+```
 
 ```markdown
 # My Awesome Skill
@@ -295,7 +295,7 @@ permissions:
 
 ## 配置
 需要设置环境变量 `MY_API_KEY`。
-```text
+```
 
 ### Step-by-Step 发布流程
 
@@ -307,7 +307,7 @@ cd ~/.openclaw/workspace/skills/my-awesome-skill
 
 # 初始化发布配置（生成 .skillrc 文件）
 npx skills init
-```text
+```
 
 初始化后会生成 `.skillrc` 配置文件：
 
@@ -319,7 +319,7 @@ npx skills init
     "access": "public"
   }
 }
-```text
+```
 
 **Step 2：验证技能格式与安全性**
 
@@ -332,7 +332,7 @@ npx skills vet .
 
 # 运行技能测试
 openclaw skills test my-awesome-skill
-```text
+```
 
 验证通过后，会显示类似输出：
 
@@ -342,14 +342,14 @@ openclaw skills test my-awesome-skill
 ✅ Dependencies: declared
 ✅ Security scan: passed
 Ready to publish!
-```text
+```
 
 **Step 3：发布到 ClawHub**
 
 ```bash
 # 发布（首次发布需要 GitHub 登录授权）
 npx skills publish
-```text
+```
 
 发布成功后，你的技能就可以在 [https://skills.sh](https://skills.sh) 上被搜索和安装了。
 
@@ -365,7 +365,7 @@ npx skills publish
 # 3. 重新验证并发布
 npx skills validate
 npx skills publish
-```text
+```
 
 版本号建议遵循 [语义化版本](https://semver.org/lang/zh-CN/) 规范：
 
@@ -408,7 +408,7 @@ git commit -m "feat: improve search accuracy"
 # Step 5: 推送并创建 Pull Request
 git push origin feature/improve-search
 # 然后在 GitHub 上创建 PR
-```text
+```
 
 ## 社区贡献最佳实践
 
@@ -443,7 +443,7 @@ npx skills install ddg-web-search
 
 # Step 4: 验证安装结果
 openclaw skills list | grep ddg-web-search
-```text
+```
 
 ## 练习 2：为已有技能创建发布配置
 
@@ -466,7 +466,7 @@ npx skills validate
 
 # Step 5: 运行安全扫描
 npx skills vet .
-```text
+```
 
 ## 练习 3：模拟社区协作流程
 
@@ -491,7 +491,7 @@ git diff
 # Step 5: 提交修改
 git add README.md
 git commit -m "fix: correct typo in README"
-```text
+```
 
 ---
 
@@ -507,7 +507,7 @@ git commit -m "fix: correct typo in README"
 
 ```bash
 npx skills status my-awesome-skill
-```bash
+```
 
 ### Q3：Skill 被拒绝发布怎么办？
 
