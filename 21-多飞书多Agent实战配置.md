@@ -6,7 +6,7 @@
 
 # 第 21 章：多飞书多 Agent 实战配置
 
-![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-12_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
+![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-13_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
 
 
 > **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 25 分钟 | **前置章节**: [第 7 章](07-飞书集成与消息自动化.md)、[第 8 章](08-单 Gateway 多 Agent 配置与管理.md)
@@ -77,12 +77,13 @@ Gateway (端口 18789)
 
 ## 21.2 前置条件
 
-开始前确保：
+在配置多飞书多 Agent 之前，需要确保基础环境已就绪。本章操作涉及多个飞书应用和多个 Agent 工作空间的创建与关联，如果基础环境有问题（Gateway 未运行、Token 过期等），后续步骤会频繁报错。建议先完成以下检查清单：
 
 - [x] OpenClaw 已安装并运行（v2026.3.x+）
 - [x] 至少一个飞书 App 已配置（参考[第 7 章](07-飞书集成与消息自动化.md)）
 - [x] 飞书 SDK 已安装：`@larksuiteoapi/node-sdk`
 - [x] Gateway 以 systemd 服务运行
+- [x] 当前用户有读写 `~/.openclaw/` 目录的权限
 
 ### 检查当前状态
 
@@ -595,6 +596,42 @@ openclaw agents  # 确认 Routing 行显示正确的绑定
 
 ---
 
+
+## Troubleshooting
+
+### 配置保存后 Gateway 启动报 JSON 语法错误
+
+**原因**：手动编辑 `openclaw.json` 时引入了尾逗号或缺少引号。
+
+**排查**：
+
+```bash
+python3 -m json.tool ~/.openclaw/openclaw.json
+# 输出错误行号，修正后重新保存
+```
+
+## Agent 创建成功但消息不触达
+
+**排查步骤**：
+
+1. 确认飞书 App 已发布且机器人已添加到目标群聊
+2. 确认路由绑定正确：`openclaw agents --json | jq '.[].bindings'`
+3. 检查 Gateway 日志：`journalctl --user -u openclaw-gateway --no-pager -n 30`
+4. 测试连通性：`openclaw channels status --probe`
+
+### Cron 任务投递到错误的 Agent
+
+**原因**：`jobs.json` 中任务未指定 `deliverTo` 字段，默认投递到 `main` Agent。
+
+**解决**：在任务定义中明确指定目标账号和 Agent：
+
+```json
+{
+  "deliverTo": { "channel": "feishu", "account": "coding-bot" }
+}
+```
+
+---
 
 ## 本章小结
 

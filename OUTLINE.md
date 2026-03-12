@@ -115,7 +115,7 @@
 <td align="center">⭐⭐</td>
 <td>
 
-- 💻 从 ClawdHub 安装 Skill
+- 💻 从 ClawHub 安装 Skill
 - 💻 本地 Skill 安装：路径安装与软链接
 - 💻 版本管理：升级、回滚、锁定
 - 💻 依赖管理：Skill 间 / 系统 / Python 包
