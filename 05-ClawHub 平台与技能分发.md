@@ -173,22 +173,49 @@ npx skills install tavily-search@1.2.0
 
 ### 查看已安装技能
 
+安装技能后，可以通过以下命令查看本地已安装的所有技能及其版本、状态和来源信息。列表会显示技能名称、版本号、安装来源（ClawHub / 本地）和最后更新时间：
+
 ```bash
 # 列出所有已安装的技能及其版本
 openclaw skills list
+
+# 只显示特定关键词相关的技能
+openclaw skills list | grep search
+
+# 以 JSON 格式输出，方便脚本处理
+openclaw skills list --json
+```
+
+输出示例：
+
+```text
+名称              版本    来源       更新时间
+tavily-search     1.2.0   ClawHub    2026-03-01
+ddg-web-search    0.9.1   ClawHub    2026-02-28
+my-custom-skill   0.1.0   本地       2026-03-05
 ```
 
 ## 更新与卸载
 
 ### 更新与卸载
 
+技能的更新和卸载操作都在本地执行，不会影响 ClawHub 上的公共版本。更新前建议先查看 changelog 确认变更内容，卸载操作会同时清理技能目录和相关配置缓存：
+
 ```bash
 # 更新单个技能到最新版
 npx skills update tavily-search
 
-# 卸载技能
+# 批量更新所有已安装技能
+npx skills update --all
+
+# 卸载技能（同时清理配置缓存）
 npx skills uninstall tavily-search
+
+# 卸载前查看技能依赖关系
+npx skills deps tavily-search
 ```
+
+> **注意**：卸载操作不可撤销。如果技能包含自定义配置，建议先备份 `config.yaml` 文件。
 
 ## 安装前后对比
 
@@ -405,6 +432,48 @@ git push origin feature/improve-search
 | 小步提交 | 每个 PR 只解决一个问题，方便 Review |
 | 包含测试 | 新功能或修复都应附带测试验证 |
 | 更新文档 | 功能变更时同步更新 README 和 SKILL.md |
+
+---
+
+## 进阶：技能分发架构与原理
+
+理解 ClawHub 背后的分发架构有助于排查安装问题和优化技能加载性能。
+
+### 技能包结构
+
+每个发布到 ClawHub 的技能包遵循统一的目录结构：
+
+```text
+my-skill/
+├── SKILL.md          # 元数据：名称、版本、触发词、工具声明
+├── README.md         # 使用文档与示例
+├── config.yaml       # 默认配置（API Key 等）
+├── handler.ts        # 核心逻辑入口
+├── tests/            # 测试用例
+└── .skillignore      # 发布时排除的文件
+```
+
+### 版本解析与依赖管理
+
+ClawHub 使用语义化版本（SemVer）进行版本管理。安装时的版本解析规则如下：
+
+| 版本表达式 | 含义 | 示例 |
+|-----------|------|------|
+| `1.2.0` | 精确版本 | 只安装 1.2.0 |
+| `^1.2.0` | 兼容更新 | 允许 1.2.x 和 1.x.0，不跨大版本 |
+| `~1.2.0` | 补丁更新 | 只允许 1.2.x |
+| `latest` | 最新稳定版 | 默认行为 |
+
+### 技能加载流程
+
+当 Agent 启动时，Gateway 按照以下顺序加载技能：
+
+1. **扫描 skills 目录** — 读取所有 `SKILL.md` 文件的 frontmatter
+2. **解析工具声明** — 提取每个技能提供的工具（tools）列表
+3. **注册触发词** — 将 `triggers` 字段注册到路由表
+4. **懒加载执行** — 只有在实际调用时才加载 `handler.ts`
+
+这种懒加载机制意味着安装大量技能不会显著增加启动时间，只有被调用的技能才消耗内存。
 
 ---
 

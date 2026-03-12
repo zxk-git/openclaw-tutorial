@@ -6,7 +6,7 @@
 
 # 第 3 章：Skills 插件体系与批量开发
 
-![difficulty](https://img.shields.io/badge/难度-⭐_入门-brightgreen) ![time](https://img.shields.io/badge/阅读时间-12_分钟-blue) ![chapter](https://img.shields.io/badge/章节-03%2F21-purple)
+![difficulty](https://img.shields.io/badge/难度-⭐_入门-brightgreen) ![time](https://img.shields.io/badge/阅读时间-13_分钟-blue) ![chapter](https://img.shields.io/badge/章节-03%2F21-purple)
 
 
 > **难度**: ⭐ 入门 | **预计阅读**: 20 分钟 | **前置章节**: [第 1-2 章](01-基础介绍与安装.md)

@@ -6,7 +6,7 @@
 
 # 第 21 章：多飞书多 Agent 实战配置
 
-![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-19_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
+![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-20_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
 
 
 > **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 25 分钟 | **前置章节**: [第 7 章](07-飞书集成与消息自动化.md)、[第 8 章](08-单 Gateway 多 Agent 配置与管理.md)

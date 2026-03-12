@@ -323,7 +323,12 @@ EOF
 
 ### 查询记忆
 
+查询记忆时既可以使用标准的 shell 命令，也可以通过 OpenClaw CLI 进行统一管理：
+
 ```bash
+# 通过 OpenClaw CLI 查看记忆系统状态
+openclaw memory status
+
 # 按关键词搜索记忆
 grep -rl "tavily" ~/.openclaw/workspace/memory/
 
@@ -338,6 +343,9 @@ ls ~/.openclaw/workspace/memory/2026-03-*.md
 
 # 搜索高重要性记忆
 grep -l "重要性: high" ~/.openclaw/workspace/memory/*.md
+
+# 使用 openclaw doctor 检查记忆系统健康状态
+openclaw doctor --check memory
 ```
 
 ## 更新记忆
@@ -549,7 +557,7 @@ Step 3: 写入
 
 Step 4: 确认
   通知用户记忆已保存：
-  - "我已记住这个信息，保存在 memory/2026-03-06-xxx.md"
+  - "我已记住这个信息，保存在 memory/2026-03-06-github-config.md"
 ```
 
 ```bash
@@ -872,6 +880,60 @@ System Prompt（简化示意）:
 
 > [!TIP]
 > 记忆的质量直接决定 Agent 的智能程度。高质量的记忆应该是：**具体的**（包含操作细节）、**结构化的**（分类清晰）、**可复用的**（提炼为通用经验）。
+
+---
+
+## 进阶：记忆系统架构原理
+
+理解记忆系统的内部架构有助于设计更高效的记忆策略，以及排查记忆相关问题。
+
+### 记忆索引机制
+
+Agent 启动时会按照以下流程加载记忆：
+
+1. **读取 MEMORY.md** — 获取全局索引，了解有哪些记忆文件
+2. **解析元数据** — 提取每个记忆的分类、标签、重要性和创建时间
+3. **构建索引表** — 在内存中创建快速查找的倒排索引
+4. **按需加载** — 只有当查询命中时才读取完整文件内容
+
+这种懒加载机制让 Agent 可以管理数百个记忆文件而不影响启动速度。
+
+### 时间衰减公式
+
+记忆检索时的时间衰减模型基于以下公式：
+
+$$
+\text{relevance} = \text{semantic\_score} \times e^{-\lambda \cdot \Delta t} \times \text{importance\_weight}
+$$
+
+其中 $\lambda$ 是衰减系数（默认 0.05），$\Delta t$ 是距今天数，`importance_weight` 根据重要性级别设定（high=1.5, medium=1.0, low=0.5）。这意味着高重要性记忆的衰减速度明显慢于低重要性记忆。
+
+---
+
+## 注意事项与常见错误
+
+在使用记忆系统时，以下几点常被忽视：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| 不写元数据头 | Agent 无法按分类、重要性检索 | 每个记忆文件必须包含分类、标签、重要性字段 |
+| 记忆内容过于笼统 | 检索时匹配精度低，无法指导具体操作 | 记录具体的命令、参数、错误信息 |
+| 从不清理旧记忆 | 文件数膨胀，检索噪音增多 | 定期合并同类记忆，归档低价值内容 |
+| MEMORY.md 与实际文件不同步 | Agent 找不到新创建的记忆 | 创建/删除记忆后及时更新索引 |
+| 所有记忆都标为 high | 重要性区分失效，时间衰减无效 | 按实际价值分配 high/medium/low |
+
+```bash
+# 快速检查记忆系统健康度
+openclaw doctor --check memory
+
+# 查看记忆统计信息
+openclaw memory status
+
+# 查找缺少元数据的记忆文件
+for f in ~/.openclaw/workspace/memory/*.md; do
+  grep -qL '分类:' "$f" && echo "缺少分类: $f"
+done
+```
 
 ---
 
