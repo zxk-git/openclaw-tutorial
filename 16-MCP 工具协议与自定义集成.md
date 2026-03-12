@@ -6,7 +6,7 @@
 
 # 第 16 章：MCP 工具协议与自定义集成
 
-![difficulty](https://img.shields.io/badge/难度-⭐⭐_基础-green) ![time](https://img.shields.io/badge/阅读时间-26_分钟-blue) ![chapter](https://img.shields.io/badge/章节-16%2F21-purple)
+![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-26_分钟-blue) ![chapter](https://img.shields.io/badge/章节-16%2F21-purple)
 
 
 > **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 28 分钟 | **前置章节**: [第 3 章](03-Skills 插件体系与批量开发.md)、[第 11 章](11-高级场景-第三方平台集成.md)
@@ -1249,10 +1249,6 @@ npm list @modelcontextprotocol/sdk
 | OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
 | ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-11
 
 ## 本章小结
 

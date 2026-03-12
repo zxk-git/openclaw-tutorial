@@ -6,7 +6,10 @@
 
 # 第 3 章：Skills 插件体系与批量开发
 
-> **难度**: ⭐⭐ 中级 | **预计阅读**: 20 分钟 | **前置章节**: [第 1-2 章](01-基础介绍与安装.md)
+![difficulty](https://img.shields.io/badge/难度-⭐_入门-brightgreen) ![time](https://img.shields.io/badge/阅读时间-13_分钟-blue) ![chapter](https://img.shields.io/badge/章节-03%2F21-purple)
+
+
+> **难度**: ⭐ 入门 | **预计阅读**: 20 分钟 | **前置章节**: [第 1-2 章](01-基础介绍与安装.md)
 
 
 ## 📑 本章目录
@@ -42,21 +45,6 @@
 - [本章小结](#本章小结)
 
 > 本章深入讲解 OpenClaw 的 Skills 插件体系——它是平台最核心的扩展机制。通过 Skills，Agent 可以获得搜索、办公集成、安全审查等各种能力。你将学会如何理解 Skill 结构、编写自己的 SKILL.md 并进行批量开发。
-
----
-
-## 📑 目录
-
-- [3.1 Skills 插件体系概述](#31-skills-插件体系概述)
-- [3.2 Skill 目录结构](#32-skill-目录结构)
-- [3.3 SKILL.md 编写规范](#33-skillmd-编写规范)
-- [3.4 Skill 开发实战](#34-skill-开发实战)
-- [3.5 批量 Skill 管理](#35-批量-skill-管理)
-- [3.6 调试与测试](#36-调试与测试)
-- [实操练习](#实操练习)
-- [常见问题 (FAQ)](#常见问题-faq)
-- [外部参考链接](#外部参考链接)
-- [本章小结](#本章小结)
 
 ---
 
@@ -583,124 +571,6 @@ A: Agent 会按照匹配度和优先级选择最合适的 Skill。如果冲突�
 ---
 
 
-### 补充 1
-
-OpenClaw is an open-source framework for developing AI agents, and its skills are modular Markdown files that automate tasks for these agents. To install a skill, use `npx clawhub install <skill-slug>`. Skills enhance agent functionality and workflow efficiency.
-
-### 补充 2
-
-- **OpenClaw Application Development - Custom Skills and Plugin ...** (relevance: 77%)
-  https://www.tencentcloud.com/techpedia/140775
-  OpenClaw Application Development - Custom Skills and Plugin Development Guide - Tencent Cloud. OpenClaw Application Development: Custom Skills and Plugin Developme
-
-### 补充 3
-
-- **Plugins - OpenClaw Docs** (relevance: 72%)
-  https://docs.openclaw.ai/tools/plugin
-  # Plugins. # ​ Plugins (Extensions). ## ​ Quick start (new to plugins?). `openclaw plugins install @openclaw/voice-call`. ## ​ Available plugins (official). ## ​ Plugin SDK import paths. `openclaw/plugin-sdk/cop
-
-### 补充 4
-
-- **Skills - OpenClaw Docs** (relevance: 64%)
-  https://docs.openclaw.ai/tools/skills
-  ##### Skills. # Skills. # ​ Skills (OpenClaw). ## ​ Locations and precedence. ## ​ Per-agent vs shared skills. ## ​ Plugins + skills. ## ​ ClawHub (install + sync). ## ​ Security notes. ## ​ Format (AgentSkills +
-
-### 补充 5
-
-- **What are OpenClaw Skills? A 2026 Developer's Guide | DigitalOcean** (relevance: 62%)
-  https://www.digitalocean.com/resources/articles/what-are-openclaw-skills
-  # What are OpenClaw Skills? OpenClaw skills are designed to make working with OpenClaw’s AI agents more practical, modular, and powerf
-
-
-### 补充 1
-
-- **Plugins - OpenClaw Docs** (relevance: 72%)
-  https://docs.openclaw.ai/tools/plugin
-  # Plugins. # ​ Plugins (Extensions). ## ​ Quick start (new to plugins?). `openclaw plugins install @openclaw/voice-call`. ## ​ Available plugins (official). ## ​ Plugin SDK import paths. `openclaw/plugin-sdk/cop
-
-### 补充 2
-
-- **Skills - OpenClaw Docs** (relevance: 64%)
-  https://docs.openclaw.ai/tools/skills
-  ##### Skills. # Skills. # ​ Skills (OpenClaw). ## ​ Locations and precedence. ## ​ Per-agent vs shared skills. ## ​ Plugins + skills. ## ​ ClawHub (install + sync). ## ​ Security notes. ## ​ Format (AgentSkills +
-
-### 补充 3
-
-- **What are OpenClaw Skills? A 2026 Developer's Guide | DigitalOcean** (relevance: 62%)
-  https://www.digitalocean.com/resources/articles/what-are-openclaw-skills
-  # What are OpenClaw Skills? OpenClaw skills are designed to make working with OpenClaw’s AI agents more practical, modular, and powerf
-
-### 补充 4
-
-OpenClaw skills are Markdown files defining agent behaviors. To publish, use `clawhub publish`. Follow OpenClaw's CLI for missing requirements.
-
-### 补充 5
-
-- **Building Custom OpenClaw Skills: A Hands-On Tutorial - DataCamp** (relevance: 100%)
-  https://www.datacamp.com/es/tutorial/building-open-claw-skills
-  Learn how to build OpenClaw skills from scratch, connect external APIs, configure Docker sandboxing, and publish to ClawHub in this step-by-step
-
-
-### 补充 1
-
-OpenClaw is an open-source framework for developing WhatsApp bots with custom skills and plugins. It supports integration with various APIs and tools. To develop skills and plugins, use the OpenClaw documentation.
-
-### 补充 2
-
-- **Plugins - OpenClaw Docs** (relevance: 72%)
-  https://docs.openclaw.ai/tools/plugin
-  # Plugins. # ​ Plugins (Extensions). ## ​ Quick start (new to plugins?). `openclaw plugins install @openclaw/voice-call`. ## ​ Available plugins (official). ## ​ Plugin SDK import paths. `openclaw/plugin-sdk/cop
-
-### 补充 3
-
-- **OpenClaw custom API integration guide for skills and plugins** (relevance: 72%)
-  https://lumadock.com/tutorials/openclaw-custom-api-integration-guide
-  # OpenClaw custom API integration guide for skills and plugins. OpenClaw custom API integration guide for skills and plugins - OpenClaw custom
-
-### 补充 4
-
-- **OpenClaw Application Marketplace - Pre-built Skills and Plugins ...** (relevance: 67%)
-  https://www.tencentcloud.com/techpedia/140807
-  * **n8n Bridge Skill** — Connects OpenClaw to n8n workflows for complex multi-step automations. The Tencent Cloud Lighthouse Special Offer page currently has c
-
-### 补充 5
-
-OpenClaw skills are modular markdown files that automate tasks for AI agents. They can be created by developers and installed via `npx clawhub install <skill-slug>`. To publish a skill, use `clawhub publish` followed by the skill's path.
-
-
-### 补充 1
-
-- **Plugins - OpenClaw Docs** (relevance: 72%)
-  https://docs.openclaw.ai/tools/plugin
-  # Plugins. # ​ Plugins (Extensions). ## ​ Quick start (new to plugins?). `openclaw plugins install @openclaw/voice-call`. ## ​ Available plugins (official). ## ​ Plugin SDK import paths. `openclaw/plugin-sdk/cop
-
-### 补充 2
-
-- **OpenClaw custom API integration guide for skills and plugins** (relevance: 72%)
-  https://lumadock.com/tutorials/openclaw-custom-api-integration-guide
-  # OpenClaw custom API integration guide for skills and plugins. OpenClaw custom API integration guide for skills and plugins - OpenClaw custom
-
-### 补充 3
-
-- **OpenClaw Application Marketplace - Pre-built Skills and Plugins ...** (relevance: 67%)
-  https://www.tencentcloud.com/techpedia/140807
-  * **n8n Bridge Skill** — Connects OpenClaw to n8n workflows for complex multi-step automations. The Tencent Cloud Lighthouse Special Offer page currently has c
-
-### 补充 4
-
-- **The SKILL.md Pattern: How to Write AI Agent Skills That Actually Work** (relevance: 77%)
-  https://bibek-poudel.medium.com/the-skill-md-pattern-how-to-write-ai-agent-skills-that-actually-work-72a3169dd7ee
-  The SKILL.md Pattern: How to Write AI Agent Skills That Actually Work | by Bibek Poudel |
-
-### 补充 5
-
-- **What are OpenClaw Skills? A 2026 Developer's Guide | DigitalOcean** (relevance: 65%)
-  https://www.digitalocean.com/resources/articles/what-are-openclaw-skills
-  # What are OpenClaw Skills? OpenClaw skills are designed to make working with OpenClaw’s AI agents more practical, modular, and powerf
-
-
----
-
 ## 参考来源
 
 | 来源 | 链接 | 可信度 | 说明 |
@@ -709,67 +579,6 @@ OpenClaw skills are modular markdown files that automate tasks for AI agents. Th
 | OpenClaw GitHub 仓库 | https://github.com/anthropics/openclaw | A | 源码, Issues, Release |
 | ClawHub Skills 平台 | https://hub.openclaw.com | A | Skills, 市场, 安装 |
 
-
-### 补充 1
-
-OpenClaw skills are modular markdown files that automate tasks for AI agents. They can be installed via `npx clawhub install <skill-slug>`. Custom skills can be built and shared for specific automations.
-
-### 补充 2
-
-- **OpenClaw Application Marketplace - Pre-built Skills and Plugins ...** (relevance: 67%)
-  https://www.tencentcloud.com/techpedia/140807
-  * **n8n Bridge Skill** — Connects OpenClaw to n8n workflows for complex multi-step automations. The Tencent Cloud Lighthouse Special Offer page currently has c
-
-### 补充 3
-
-- **Skills - OpenClaw Docs** (relevance: 64%)
-  https://docs.openclaw.ai/tools/skills
-  ##### Skills. # Skills. # ​ Skills (OpenClaw). ## ​ Locations and precedence. ## ​ Per-agent vs shared skills. ## ​ Plugins + skills. ## ​ ClawHub (install + sync). ## ​ Security notes. ## ​ Format (AgentSkills +
-
-### 补充 4
-
-- **What are OpenClaw Skills? A 2026 Developer's Guide | DigitalOcean** (relevance: 62%)
-  https://www.digitalocean.com/resources/articles/what-are-openclaw-skills
-  # What are OpenClaw Skills? OpenClaw skills are designed to make working with OpenClaw’s AI agents more practical, modular, and powerf
-
-### 补充 5
-
-An OpenClaw SKILL.md file defines a skill's metadata and instructions, including YAML frontmatter and Markdown instructions. Essential components include a name and description, and it can include scripts, references, and assets. To publish, use the clawhub command.
-
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-11
-
-### 补充 1
-
-- **OpenClaw Application Marketplace - Pre-built Skills and Plugins ...** (relevance: 67%)
-  https://www.tencentcloud.com/techpedia/140807
-  * **n8n Bridge Skill** — Connects OpenClaw to n8n workflows for complex multi-step automations. The Tencent Cloud Lighthouse Special Offer page currently has c
-
-### 补充 2
-
-- **Skills - OpenClaw Docs** (relevance: 64%)
-  https://docs.openclaw.ai/tools/skills
-  ##### Skills. # Skills. # ​ Skills (OpenClaw). ## ​ Locations and precedence. ## ​ Per-agent vs shared skills. ## ​ Plugins + skills. ## ​ ClawHub (install + sync). ## ​ Security notes. ## ​ Format (AgentSkills +
-
-### 补充 3
-
-- **What are OpenClaw Skills? A 2026 Developer's Guide | DigitalOcean** (relevance: 62%)
-  https://www.digitalocean.com/resources/articles/what-are-openclaw-skills
-  # What are OpenClaw Skills? OpenClaw skills are designed to make working with OpenClaw’s AI agents more practical, modular, and powerf
-
-### 补充 4
-
-- **Skills - OpenClaw Docs** (relevance: 100%)
-  https://docs.openclaw.ai/tools/skills
-  ##### Skills. # Skills. # ​ Skills (OpenClaw). ## ​ Locations and precedence. ## ​ Per-agent vs shared skills. ## ​ Plugins + skills. ## ​ ClawHub (install + sync). ## ​ Security notes. ## ​ Format (AgentSkills
-
-### 补充 5
-
-- **openclaw/skills/skill-creator/SKILL.md at main - GitHub** (relevance: 100%)
-  https://github.com/openclaw/openclaw/blob/main/skills/skill-creator/SKILL.md
-  ## About Skills. skill-name/ ├── SKILL.md (required) │ ├── YAML frontmatter metadata (required) │ │ ├── name: (required) │ │ └── descriptio
 
 ## 本章小结
 

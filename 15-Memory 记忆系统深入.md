@@ -6,6 +6,9 @@
 
 # 第 15 章：Memory 记忆系统深入
 
+![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐_进阶-orange) ![time](https://img.shields.io/badge/阅读时间-26_分钟-blue) ![chapter](https://img.shields.io/badge/章节-15%2F21-purple)
+
+
 > **难度**: ⭐⭐⭐ 进阶 | **预计阅读**: 25 分钟 | **前置章节**: [第 1 章](01-基础介绍与安装.md)
 
 > Memory（记忆）系统是 OpenClaw Agent 实现长期学习和个性化服务的核心机制。本章将深入讲解记忆的三种类型、存储格式、管理方法、检索机制和清理策略，帮助你设计出高效的记忆架构，让 Agent 真正具备"经验积累"能力。
@@ -1044,37 +1047,6 @@ vim ~/.openclaw/workspace/memory/2026-03-06-my-memory.md
 ---
 
 
-### 补充 1
-
-OpenClaw's memory system uses vector embeddings for semantic search, combining BM25 and vector search for efficient retrieval. It supports per-agent SQLite storage and experimental QMD backend. Memory tools include automatic flushing and vector memory search.
-
-### 补充 2
-
-- **Deep Dive: How OpenClaw's Memory System Works | Study Notes** (relevance: 86%)
-  https://snowan.gitbook.io/study-notes/ai-blogs/openclaw-memory-system-deep-dive
-  ### [](https://snowan.gitbook.io/study-notes/ai-blogs/openclaw-memory-system-deep-dive#id-1.-ephemeral-memory-daily-logs). ### [](htt
-
-###-补充-3
-
---**Memory---OpenClaw-Docs**-(relevance:-77%)
-  https://docs.openclaw.ai/concepts/memory
-  [Skip to main content](https://docs.openclaw.ai/concepts/memory#content-area). *   [Memory](https://docs.openclaw.ai/concepts/memory). *   [Memory](https://docs.openclaw.ai/concepts/memory#memory). *   [Memory
-
-### 补充 4
-
-- **memory - OpenClaw Docs** (relevance: 68%)
-  https://docs.openclaw.ai/cli/memory
-  * PTY and Process Supervision Plan. # memory. # `openclaw memory`. Manage semantic memory indexing and search. Provided by the active memory plugin (default: `memory-core`; set `plugins.slots.memory = "none"` to di
-
-### 补充 5
-
-- **OpenClaw Memory Optimization Suite: Moving from Fuzzy RAG to ...** (relevance: 65%)
-  https://bluedot.it.com/blog/openclaw-memory-optimization-suite
-  This is a standalone, MIT-licensed tool that provides: Interactive Topology: A real-time graph of your agent's knowledge base. Direct Live-Edit:
-
-
----
-
 ## 参考来源
 
 | 来源 | 链接 | 说明 |
@@ -1083,38 +1055,6 @@ OpenClaw's memory system uses vector embeddings for semantic search, combining B
 | OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
 | ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-11
-
-### 补充 1
-
-OpenClaw uses a hybrid memory system combining Markdown files and SQLite for persistent memory. It employs vector embeddings for semantic search and retrieval. The system aims to provide long-term memory for AI assistants.
-
-### 补充 2
-
-- **# [Idea] Enhancing Long-term Memory: A Dual-Layer Approach with ...** (relevance: 100%)
-  https://github.com/openclaw/openclaw/discussions/14050
-  After extensively using OpenClaw across multiple agents and workspaces, I've identified a critical limitation in the current memory retrieval system:
-
-### 补充 3
-
-- **Fixing OpenClaw's Memory with Knowledge Graphs - LinkedIn** (relevance: 100%)
-  https://www.linkedin.com/posts/akshay-pachaar_openclaws-memory-is-broken-heres-a-100-activity-7429562930917990400-n2DI
-  Under the hood, OpenClaw stores memory in plain Markdown files. Retrieval uses vector embedding
-
-### 补充 4
-
-- **2026 Complete Guide to OpenClaw memorySearch - DEV Community** (relevance: 100%)
-  https://dev.to/czmilo/2026-complete-guide-to-openclaw-memorysearch-supercharge-your-ai-assistant-49oc
-  # 2026 Complete Guide to OpenClaw memorySearch: Supercharge Your AI Assistant. # 2026 Complete Guide to OpenC
-
-### 补充 5
-
-- **Beyond the Chat: How OpenClaw's Hybrid Memory System Gives AI ...** (relevance: 100%)
-  https://levelup.gitconnected.com/beyond-the-chat-how-openclaws-hybrid-memory-system-gives-ai-a-real-brain-11a622901106
-  ## Level Up Coding. # Beyond the Chat: How OpenClaw’s Hybrid Memory System Gives AI a R
 
 ## 本章小结
 

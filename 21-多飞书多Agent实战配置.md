@@ -6,6 +6,9 @@
 
 # 第 21 章：多飞书多 Agent 实战配置
 
+![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-12_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
+
+
 > **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 25 分钟 | **前置章节**: [第 7 章](07-飞书集成与消息自动化.md)、[第 8 章](08-单 Gateway 多 Agent 配置与管理.md)
 
 
@@ -37,24 +40,6 @@
 - [本章小结](#本章小结)
 
 > 本章是一个完整的实战教程，基于真实部署经验，演示如何在同一台服务器上配置多个飞书机器人，每个绑定独立的 Agent、工作空间和身份。适用于需要"通用助手 + 专业助手"分工协作的场景。
-
----
-
-## 📖 目录
-
-- [21.1 场景与目标](#211-场景与目标)
-- [21.2 前置条件](#212-前置条件)
-- [21.3 创建第二个飞书应用](#213-创建第二个飞书应用)
-- [21.4 配置多飞书账号](#214-配置多飞书账号)
-- [21.5 创建独立 Agent 与工作空间](#215-创建独立-agent-与工作空间)
-- [21.6 自定义工作空间文件](#216-自定义工作空间文件)
-- [21.7 路由绑定与验证](#217-路由绑定与验证)
-- [21.8 消息测试](#218-消息测试)
-- [21.9 Cron 任务分流](#219-cron-任务分流)
-- [实操练习](#实操练习)
-- [常见问题 (FAQ)](#常见问题-faq)
-- [参考资料](#参考资料)
-- [本章小结](#本章小结)
 
 ---
 
@@ -610,50 +595,6 @@ openclaw agents  # 确认 Routing 行显示正确的绑定
 
 ---
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-10
-
-### 补充 1
-
-OpenClaw integrates with Feishu for multi-bot collaboration, using appId/appSecret for setup. Feishu tasks include document, message, and calendar management. Use `npm install -g @openclaw/plugin-feishu` to install the plugin.
-
-### 补充 2
-
-- **OpenClaw Feishu Multi-Agent Deploy |... - LobeHub** (relevance: 100%)
-  https://lobehub.com/skills/seaworld008-blackbeard-fleet-openclaw-feishu-multi-agent-deploy
-  # OpenClaw Feishu Multi-Agent Deploy. OpenClaw Feishu Multi-Agent Deploy is a deployment and troubleshooting skill for integrating
-
-### 补充 3
-
-- **openclaw-feishu-multi-agent-deploy |... - LobeHub** (relevance: 100%)
-  https://lobehub.com/fr/skills/seaworld008-blackbeard-fleet-openclaw-feishu-multi-agent-deploy
-  # openclaw-feishu-multi-agent-deploy. OpenClaw Feishu Multi-Agent Deploy is a deployment and troubleshooting skill for integrati
-
-### 补充 4
-
-- **OpenClaw (Clawdbot)--ModelArk-Byteplus** (relevance: 100%)
-  https://docs.byteplus.com/en/docs/ModelArk/2183190
-  The key configuration for integrating tools are as follows:. Do not use the Base model URL (https://ark.ap-southeast.bytepluses.com/api/v3). | Model/auth provider | Select "Skip for
-
-### 补充 5
-
-- **Feishu Agent Relay - Multi-Bot Collaboration — AI Skill — Termo** (relevance: 100%)
-  https://termo.ai/skills/feishu-agent-relay
-  Enables multi-Agent collaboration on Feishu by relaying tasks between coordinator and specialist Bots with user ID mapping and proactive messaging. | Mode | For | Us
-
-
----
-
-## 参考来源
-
-| 来源 | 链接 | 可信度 | 说明 |
-|------|------|--------|------|
-| 飞书开放平台文档 | https://open.feishu.cn/document | A | 飞书, 机器人, 消息 |
-| OpenClaw 官方文档 | https://docs.openclaw.com | A | 安装, 配置, 命令 |
-| OpenClaw GitHub 仓库 | https://github.com/anthropics/openclaw | A | 源码, Issues, Release |
-| ClawHub Skills 平台 | https://hub.openclaw.com | A | Skills, 市场, 安装 |
 
 ## 本章小结
 

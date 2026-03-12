@@ -6,7 +6,10 @@
 
 # 第 8 章：单 Gateway 多 Agent 配置与管理
 
-> **难度**: ⭐⭐⭐ 进阶 | **预计阅读**: 20 分钟 | **前置章节**: [第 2 章](02-部署与环境初始化.md)
+![difficulty](https://img.shields.io/badge/难度-⭐⭐_基础-green) ![time](https://img.shields.io/badge/阅读时间-15_分钟-blue) ![chapter](https://img.shields.io/badge/章节-08%2F21-purple)
+
+
+> **难度**: ⭐⭐ 基础 | **预计阅读**: 20 分钟 | **前置章节**: [第 2 章](02-部署与环境初始化.md)
 
 > 本章讲解如何在单个 Gateway 下配置和管理多个 Agent，实现多项目隔离、多角色协作。这是 OpenClaw 中高级运维的核心能力。适用于需要在同一台机器或同一集群中运行多个独立 AI 助手的场景，如团队内多角色分工、多项目 DevOps 自动化等。
 
@@ -517,35 +520,6 @@ openclaw agents list --verbose
 ---
 
 
-### 补充 1
-
-OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using agents for multi-step task execution. It operates as a multi-agent system, allowing multiple agents to manage different channels and tasks. It is designed for always-on, scalable AI agent deployments.
-
-### 补充 2
-
-- **Understanding OpenClaw: A Comprehensive Guide to the Multi ...** (relevance: 81%)
-  https://medium.com/@ozbillwang/understanding-openclaw-a-comprehensive-guide-to-the-multi-channel-ai-gateway-ad8857cd1121
-  [Sign in](https://medium.com/m/signin?operation=login&redirect=https%3A%2F%2Fmedium.com%2
-
-###-补充-3
-
---**Multi-Agent-Routing---OpenClaw**-(relevance:-75%)
-  https://docs.openclaw.ai/concepts/multi-agent
-  [Skip to main content](https://docs.openclaw.ai/concepts/multi-agent#content-area). *   [Agent Runtime](https://docs.openclaw.ai/concepts/agent). *   [Agent Loop](https://docs.openclaw.ai/concepts
-
-###-补充-4
-
---**Proposal-for-a-Multimodal-Multi-Agent-System-Using-OpenClaw**-(relevance:-74%)
-  https://medium.com/@gwrx2005/proposal-for-a-multimodal-multi-agent-system-using-openclaw-81f5e4488233
-  The Gateway component continuously runs and binds to all configured channels (chat platforms or other input sou
-
-### 补充 5
-
-- **Run Multiple OpenClaw AI Agents with Elastic Scaling and Safe ...** (relevance: 71%)
-  https://www.digitalocean.com/blog/openclaw-digitalocean-app-platform
-  ## OpenClaw on App Platform: Built for always-on, multi-agent AI systems. For those teams, OpenClaw on DigitalOcean App Platform is the so
-
-
 ## 常见问题 (FAQ)
 
 ### Q: 本章内容是否需要前置知识？
@@ -576,38 +550,6 @@ OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using
 | Docker 官方文档 | https://docs.docker.com | A | Docker, 容器, 部署 |
 | systemd 管理文档 | https://www.freedesktop.org/wiki/Software/systemd/ | A | systemd, 服务管理, 后台运行 |
 
-
-## 最新动态与补充
-
-> 📅 更新时间: 2026-03-11
-
-### 补充 1
-
-OpenClaw is a self-hosted AI agent gateway that connects chat apps to tool-using agents for task execution. It supports multi-agent setups with separate gateways for personal and work use. OpenClaw allows different agents to handle messages from various channels.
-
-### 补充 2
-
-- **The Need For a Multi-Gateway OpenClaw Setup** (relevance: 100%)
-  https://trilogyai.substack.com/p/the-need-for-a-multi-gateway-openclaw
-  Tier 1: Personal Gateway ├── Config: ~/.openclaw/configs/openclaw-personal.json ├── Secrets: loaded by start-personal.sh (only personal keys) ├── State: ~/.o
-
-### 补充 3
-
-- **Run Multiple OpenClaw AI Agents with Elastic Scaling and Safe ...** (relevance: 100%)
-  https://www.digitalocean.com/blog/openclaw-digitalocean-app-platform
-  ## OpenClaw on App Platform: Built for always-on, multi-agent AI systems. For those teams, OpenClaw on DigitalOcean App Platform is the s
-
-### 补充 4
-
-- **Multi-Agent Routing - OpenClaw Docs** (relevance: 100%)
-  https://docs.openclaw.ai/concepts/multi-agent
-  # ​ Multi-Agent Routing. ### ​ Single-agent mode (default). ## ​ Agent helper. `openclaw channels login --channel whatsapp --account work`. ## ​ Multiple agents = multiple people, multiple p
-
-### 补充 5
-
-- **What Is OpenClaw? The Self-Hosted AI Agent Gateway Everyone's ...** (relevance: 100%)
-  https://mapify.so/blog/what-is-openclaw
-  AI Models: What It IsWhat OpenClaw Can DoWhy OpenClaw Is Trending Right NowHow OpenClaw WorksSecurity Reality Check: Running Agents Is Different From Using ChatGPTMap
 
 ## 本章小结
 
