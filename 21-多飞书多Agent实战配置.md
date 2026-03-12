@@ -6,7 +6,7 @@
 
 # 第 21 章：多飞书多 Agent 实战配置
 
-![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-13_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
+![difficulty](https://img.shields.io/badge/难度-⭐⭐⭐⭐_高级-red) ![time](https://img.shields.io/badge/阅读时间-17_分钟-blue) ![chapter](https://img.shields.io/badge/章节-21%2F21-purple)
 
 
 > **难度**: ⭐⭐⭐⭐ 高级 | **预计阅读**: 25 分钟 | **前置章节**: [第 7 章](07-飞书集成与消息自动化.md)、[第 8 章](08-单 Gateway 多 Agent 配置与管理.md)
@@ -94,7 +94,25 @@ openclaw agents
 
 # 确认 feishu SDK
 ls /usr/lib/node_modules/openclaw/node_modules/@larksuiteoapi/
+
+# 确认 OpenClaw 版本（需 2026.3.x+）
+openclaw --version
+
+# 验证 Gateway 运行状态和连通性
+openclaw gateway status --deep
 ```
+
+如果上述命令出现异常，先按以下清单排查：
+
+| 异常情况 | 可能原因 | 修复方法 |
+|----------|----------|----------|
+| `channels list` 无输出 | 尚未配置任何飞书渠道 | 先完成 [第 7 章](07-飞书集成与消息自动化.md) 的基础配置 |
+| `agents` 只显示 main | 正常——尚未添加额外 Agent | 继续本章后续步骤 |
+| `@larksuiteoapi` 目录不存在 | 飞书 SDK 未安装 | 执行 `npm install -g @larksuiteoapi/node-sdk` |
+| Gateway 状态为 inactive | 服务未启动或已崩溃 | 执行 `openclaw daemon start` 并检查日志 |
+
+> [!TIP]
+> 多飞书多 Agent 配置步骤较多，建议在开始之前先对当前配置做一次完整备份：`cp ~/.openclaw/openclaw.json ~/.openclaw/openclaw.json.bak-$(date +%Y%m%d)`。这样即使配置出错也能快速回滚到已知可用状态。
 
 ---
 
@@ -110,14 +128,20 @@ ls /usr/lib/node_modules/openclaw/node_modules/@larksuiteoapi/
 
 ### Step 2: 配置应用权限
 
-在 **权限管理** 中启用以下权限：
+在 **权限管理** 中启用以下权限。这些权限决定了机器人能在飞书中执行哪些操作——权限不足会导致特定功能报 `Permission denied` 错误，权限过多则不符合最小权限原则。建议根据实际需求逐步开启：
 
-| 权限 | 说明 |
-|------|------|
-| `im:message` | 读取和发送消息 |
-| `im:message:send_as_bot` | 以机器人身份发送消息 |
-| `im:chat` | 群聊操作 |
-| `im:resource` | 获取消息中的资源文件 |
+| 权限 | 说明 | 必须 | 使用场景 |
+|------|------|------|----------|
+| `im:message` | 读取和发送消息 | ✅ | 基础对话功能 |
+| `im:message:send_as_bot` | 以机器人身份发送消息 | ✅ | 主动推送消息、Cron 定时投递 |
+| `im:chat` | 群聊操作（获取群信息、群成员列表） | ✅ | 群聊场景下的上下文感知 |
+| `im:resource` | 获取消息中的资源文件（图片、文件等） | 推荐 | 处理用户发送的图片或文件附件 |
+| `contact:user.base:readonly` | 读取用户基本信息 | 推荐 | 在消息中显示用户名而非 user_id |
+
+配置完权限后，需要在页面底部点击 **批量开通** 按钮，然后在弹出的确认框中提交。部分权限（如 `contact` 类）可能需要企业管理员审批。
+
+> [!TIP]
+> 如果你不确定某个权限是否需要，可以先只开启前三个必须权限。后续使用中如果 OpenClaw 日志报出 `permission denied` 错误并附带具体权限名，再按需补开即可。
 
 ### Step 3: 启用机器人能力
 
@@ -470,6 +494,34 @@ openclaw message send \
 openclaw channels logs --channel feishu | tail -20
 ```
 
+### 消息测试排查清单
+
+如果测试中消息未按预期路由，按以下步骤逐一排查：
+
+```bash
+# 1. 确认两个飞书连接都在线
+openclaw channels status --probe
+
+# 2. 确认路由绑定正确
+openclaw agents --json | jq '.[] | {name: .name, bindings: .bindings}'
+
+# 3. 查看实时日志，观察消息进入哪个 Agent
+openclaw logs --follow --filter "routing"
+
+# 4. 如果消息全部进入 main，检查 accountId 匹配
+openclaw agents bindings --json
+```
+
+| 症状 | 可能原因 | 解决方法 |
+|------|----------|----------|
+| 两个机器人都回复了同一条消息 | 两个 App 在同一群且 `requireMention` 为 false | 设置 `requireMention: true` |
+| @代码助手 无回复 | coding-bot 连接未建立或路由绑定缺失 | 检查 `channels status --probe` 和 `agents bindings` |
+| 回复内容风格不对 | 工作空间的 SOUL.md 未自定义 | 检查 `~/.openclaw/workspace-coding/SOUL.md` 内容 |
+| 收到 403 错误 | 飞书 App 权限不足 | 按 [21.3 Step 2](#step-2-配置应用权限) 补充权限 |
+
+> [!TIP]
+> 测试阶段建议将日志级别设为 debug 以获取最详细的路由信息：`export OPENCLAW_LOG_LEVEL=debug && openclaw daemon restart`。测试完成后记得改回 `info` 避免日志文件快速膨胀。
+
 ---
 
 ## 21.9 Cron 任务分流
@@ -495,15 +547,39 @@ openclaw cron add \
 
 ## 编辑现有 Cron 任务
 
-在 `~/.openclaw/cron/jobs.json` 中为任务添加 `accountId` 字段：
+在 `~/.openclaw/cron/jobs.json` 中为任务添加 `accountId` 字段以指定投递账号。如果不指定 `accountId`，任务消息将通过 `default` 账号发送并路由到 `main` Agent：
 
 ```json
 {
+  "id": "code-quality-check",
+  "schedule": "0 */6 * * *",
   "channel": "feishu",
   "accountId": "coding-bot",
-  "target": "oc_群聊 ID"
+  "target": "oc_群聊ID",
+  "message": "请执行代码质量检查并生成报告",
+  "deliverTo": {
+    "agentId": "coding"
+  }
 }
 ```
+
+### Cron 多账号配置要点
+
+| 字段 | 说明 | 是否必须 |
+|------|------|----------|
+| `accountId` | 指定使用哪个飞书账号发送消息 | 多账号时推荐 |
+| `deliverTo.agentId` | 指定由哪个 Agent 处理该任务 | 多 Agent 时推荐 |
+| `target` | 飞书群聊或用户的 open_id / chat_id | ✅ 必须 |
+
+修改 `jobs.json` 后需重载 Cron 配置：
+
+```bash
+openclaw cron reload   # 热重载，无需重启 Gateway
+openclaw cron list     # 确认任务列表和账号绑定
+```
+
+> [!TIP]
+> 多 Agent 场景下，建议为每个 Agent 的 Cron 任务设置不同的错峰时间，避免多个 Agent 同时执行高负载任务导致 AI API 限流。例如主 Agent 在整点执行，coding Agent 在半点执行。
 
 ---
 
