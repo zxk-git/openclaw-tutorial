@@ -421,6 +421,87 @@ fi
 
 ---
 
+## 进阶：插件架构原理
+
+深入理解 Skills 插件的内部机制，有助于开发更高质量的自定义插件：
+
+- **插件加载机制**：Gateway 启动时扫描 `workspace/skills/` 下所有目录，解析 `manifest.json` 构建技能注册表，运行时通过正则匹配和语义相似度双重策略选择最佳 Skill。
+- **执行沙箱**：每个 Skill 脚本在独立子进程中执行，通过 stdin/stdout 与主进程通信，超时自动 kill，默认超时 30 秒可通过 `timeout` 字段配置。
+- **依赖隔离**：每个 Skill 可拥有独立的 `node_modules` 或 Python venv，避免不同插件之间的依赖冲突。
+- **批量开发模式**：使用 `openclaw skill scaffold --batch` 可从模板批量生成多个 Skill 骨架，配合 `openclaw skill test --all` 进行批量验证。
+- **热更新支持**：修改 Skill 文件后无需重启 Gateway，系统自动检测变更并重新加载，开发调试效率高。
+
+---
+
+## 注意事项与常见错误
+
+开发和管理 Skills 时需要注意以下常见陷阱：
+
+| 常见错误 | 表现 | 排查方法 |
+|---------|------|----------|
+| `manifest.json` 格式错误 | Skill 未被加载 | 使用 `openclaw doctor` 检查，确认 JSON 语法正确 |
+| 触发词冲突 | 错误的 Skill 被调用 | 检查多个 Skill 的 `triggers` 是否重叠，提高关键词区分度 |
+| 脚本权限不足 | 执行报 `Permission denied` | 确认脚本有执行权限 `chmod +x run.sh` |
+| 依赖未安装 | 运行时报 `MODULE_NOT_FOUND` | 在 Skill 目录下执行 `npm install` 安装依赖 |
+
+> ⚠️ **最佳实践**：开发新 Skill 前务必运行 `openclaw skill list` 确认不与已有 Skill 冲突，每个 Skill 应包含完整的 README 和测试用例。
+
+
+---
+
+## 进阶：插件架构与加载原理
+
+理解 Skills 的内部加载机制有助于开发高性能插件：
+
+| 阶段 | 动作 | 时机 |
+|------|------|------|
+| 发现 | 扫描 `skills/` 目录下所有 `SKILL.md` | Gateway 启动时 |
+| 注册 | 解析 frontmatter，注册工具和触发词 | Gateway 启动时 |
+| 加载 | 读取 `handler.ts`/`handler.js` 并编译 | 首次调用时（懒加载）|
+| 执行 | 调用 handler 导出函数，传入上下文 | 每次工具调用时 |
+
+这种懒加载设计意味着安装大量 Skills 不会影响启动速度。
+
+## 注意事项与常见错误
+
+开发 Skills 时常见的错误：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| SKILL.md 格式错误 | Skill 不被识别 | 使用 `npx skills validate` 验证 |
+| handler 未导出默认函数 | 调用时报错 | 确保 `export default` 正确导出 |
+| 未声明依赖 | 其他环境安装后报错 | 在 SKILL.md 中声明 dependencies |
+
+---
+
+
+---
+
+## 进阶：插件架构与加载原理
+
+理解 Skills 加载机制有助于开发高性能插件：
+
+| 阶段 | 动作 | 时机 |
+|------|------|------|
+| 发现 | 扫描 skills 目录 SKILL.md | 启动时 |
+| 注册 | 解析 frontmatter 和工具 | 启动时 |
+| 加载 | 读取 handler 并编译 | 首次调用时 |
+| 执行 | 调用导出函数 | 每次工具调用 |
+
+## 注意事项与常见错误
+
+开发 Skills 常见错误：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| SKILL.md 格式错误 | 不被识别 | 使用 npx skills validate |
+| handler 未导出默认函数 | 调用报错 | 确保 export default |
+| 未声明依赖 | 环境迁移失败 | 在 SKILL.md 声明 |
+
+---
+
+---
+
 ## 实操练习
 
 ### 练习 1：创建一个 IP 查询 Skill

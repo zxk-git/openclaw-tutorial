@@ -1021,6 +1021,60 @@ npm install -g @modelcontextprotocol/server-brave-search
 > [!NOTE]
 > MCP 生态正在快速发展。截至 2026 年 3 月，已有超过 200 个社区贡献的 MCP Server。推荐关注 [MCP 官方仓库](https://github.com/modelcontextprotocol) 和 [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) 获取最新动态。
 
+
+---
+
+## 进阶：MCP 协议架构原理
+
+MCP（Model Context Protocol）的架构设计遵循客户端-服务器模式：
+
+| 组件 | 角色 | 通信 |
+|------|------|------|
+| MCP Client | Agent 侧，发起工具调用 | JSON-RPC over stdio/HTTP |
+| MCP Server | 工具侧，提供能力 | 注册工具列表，处理调用 |
+| Transport | 通信层 | stdio（本地）/ SSE（远程）|
+| Schema | 接口定义 | JSON Schema 描述参数和返回值 |
+
+理解这个架构有助于开发自定义 MCP 工具和排查集成问题。
+
+## 注意事项与常见错误
+
+MCP 集成的常见错误：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| MCP Server 路径错误 | Agent 无法连接工具 | 使用绝对路径或确认 PATH 配置 |
+| 参数 Schema 不匹配 | 调用时参数验证失败 | 严格按 JSON Schema 定义参数 |
+| 未处理超时 | Agent 长时间等待无响应 | 在 mcporter.json 中设置超时参数 |
+
+---
+
+
+---
+
+## 进阶：MCP 协议架构原理
+
+MCP（Model Context Protocol）遵循客户端-服务器模式：
+
+| 组件 | 角色 | 通信 |
+|------|------|------|
+| MCP Client | Agent 侧发起调用 | JSON-RPC over stdio/HTTP |
+| MCP Server | 工具侧提供能力 | 注册工具列表 |
+| Transport | 通信层 | stdio 本地或 SSE 远程 |
+| Schema | 接口定义 | JSON Schema 描述参数 |
+
+## 注意事项与常见错误
+
+MCP 集成常见错误：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| Server 路径错误 | 无法连接工具 | 使用绝对路径 |
+| Schema 不匹配 | 参数验证失败 | 按 JSON Schema 定义 |
+| 未设置超时 | 长时间无响应 | 在 mcporter.json 配置 |
+
+---
+
 ---
 
 ## 实操练习

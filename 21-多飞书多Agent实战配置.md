@@ -636,6 +636,58 @@ openclaw cron list     # 确认任务列表和账号绑定
 > [!TIP]
 > 多 Agent 场景下，建议为每个 Agent 的 Cron 任务设置不同的错峰时间，避免多个 Agent 同时执行高负载任务导致 AI API 限流。例如主 Agent 在整点执行，coding Agent 在半点执行。
 
+
+---
+
+## 进阶：多 Agent 通信架构原理
+
+多飞书多 Agent 场景的通信架构基于消息路由系统：
+
+| 组件 | 职责 | 关键配置 |
+|------|------|----------|
+| Channel Router | 根据来源通道分发消息 | `openclaw.json` channels 配置 |
+| Agent Pool | 管理多个 Agent 实例 | `agents/` 目录下的独立 workspace |
+| Message Queue | 异步消息缓冲 | `delivery-queue/` 持久化队列 |
+| Session Manager | 会话状态隔离 | 每个 Agent 独立 `sessions/` |
+
+## 注意事项与常见错误
+
+多飞书多 Agent 配置的常见错误：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| 多个 Bot 共享同一 webhook | 消息串台 | 每个 Bot 配置独立的 callback URL |
+| 未区分 Agent workspace | 记忆和配置互相污染 | 严格隔离 `agents/{name}/` 目录 |
+| 配对信息未备份 | 重部署后需重新配对 | 备份 `devices/paired.json` |
+
+---
+
+
+---
+
+## 进阶：多 Agent 通信架构原理
+
+多飞书多 Agent 场景通信架构基于消息路由：
+
+| 组件 | 职责 | 关键配置 |
+|------|------|----------|
+| Channel Router | 按来源分发消息 | openclaw.json channels |
+| Agent Pool | 管理多个 Agent | agents 目录独立 workspace |
+| Message Queue | 异步消息缓冲 | delivery-queue 持久化 |
+| Session Manager | 会话状态隔离 | 每个 Agent 独立 sessions |
+
+## 注意事项与常见错误
+
+多飞书多 Agent 常见错误：
+
+| 常见错误 | 后果 | 正确做法 |
+|---------|------|----------|
+| 共享同一 webhook | 消息串台 | 每 Bot 独立 callback URL |
+| 未区分 workspace | 记忆污染 | 严格隔离 agents 目录 |
+| 配对信息未备份 | 重部署需重配 | 备份 paired.json |
+
+---
+
 ---
 
 ## 实操练习
