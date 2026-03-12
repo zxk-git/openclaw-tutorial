@@ -15,7 +15,7 @@
 
 ## 📑 本章目录
 
-- [20.1 OpenClaw 开源生态概览](#201-openclaw-开源生态概览)
+- [20.1 OpenClaw 开源生态概览](#201-OpenClaw-开源生态概览)
   - [核心项目](#核心项目)
   - [Skills 生态](#skills-生态)
   - [工具链与周边项目](#工具链与周边项目)
@@ -78,14 +78,14 @@ OpenClaw 的开源生态由多个相互协作的项目组成：
 
 | 项目 | 仓库 | 说明 | Stars |
 |------|------|------|-------|
-| **openclaw** | `openclaw/openclaw` | 核心引擎，包含 Agent 运行时、会话管理、记忆系统 | 核心 |
+| **OpenClaw** | `openclaw/openclaw` | 核心引擎，包含 Agent 运行时、会话管理、记忆系统 | 核心 |
 | **gateway** | `openclaw/gateway` | 网关服务，处理多渠道接入（飞书/API/CLI） | 核心 |
-| **clawhub** | `openclaw/clawhub` | Skills 分发平台，类似 npm/PyPI | 生态 |
+| **ClawHub** | `openclaw/clawhub` | Skills 分发平台，类似 npm/PyPI | 生态 |
 | **browser-relay** | `openclaw/browser-relay` | 浏览器自动化中继服务 | 工具 |
 | **skill-sdk** | `openclaw/skill-sdk` | Skill 开发工具包（模板、测试、发布） | 开发 |
 | **mcp-tools** | `openclaw/mcp-tools` | 官方 MCP 工具集合 | 集成 |
-| **openclaw-docs** | `openclaw/docs` | 官方文档站点（Docusaurus 构建） | 文档 |
-| **openclaw-examples** | `openclaw/examples` | 各场景的完整示例项目 | 学习 |
+| **OpenClaw-docs** | `openclaw/docs` | 官方文档站点（Docusaurus 构建） | 文档 |
+| **OpenClaw-examples** | `openclaw/examples` | 各场景的完整示例项目 | 学习 |
 
 ### Skills 生态
 
@@ -916,9 +916,9 @@ pip install langchain crewai
 
 | 来源 | 链接 | 说明 |
 |------|------|------|
-| OpenClaw 官方文档 | https://docs.openclaw.com | 官方安装与配置手册 |
-| OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
-| ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
+| OpenClaw 官方文档 | https://docs.OpenClaw.ai | 官方安装与配置手册 |
+| OpenClaw GitHub | https://github.com/OpenClaw/OpenClaw | 源码与 Issue 追踪 |
+| ClawHub 平台 | https://hub.OpenClaw.ai | Skills 市场与文档 |
 
 ## 本章小结
 

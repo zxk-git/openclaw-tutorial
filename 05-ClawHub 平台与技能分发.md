@@ -15,14 +15,14 @@
 ## 📑 本章目录
 
 - [📖 目录](#目录)
-- [5.1 ClawHub 平台简介](#51-clawhub-平台简介)
+- [5.1 ClawHub 平台简介](#51-ClawHub-平台简介)
 - [5.2 浏览与搜索技能](#52-浏览与搜索技能)
 - [搜索参数说明](#搜索参数说明)
 - [5.3 安装与管理技能](#53-安装与管理技能)
 - [查看已安装技能](#查看已安装技能)
 - [更新与卸载](#更新与卸载)
 - [安装前后对比](#安装前后对比)
-- [5.4 发布技能到 ClawHub](#54-发布技能到-clawhub)
+- [5.4 发布技能到 ClawHub](#54-发布技能到-ClawHub)
 - [功能说明](#功能说明)
 - [使用方法](#使用方法)
 - [配置](#配置)
@@ -534,9 +534,9 @@ openclaw chat --skill my-awesome-skill
 ## 5.8 参考资源
 
 - **ClawHub 官方网站**：[https://skills.sh](https://skills.sh) — 浏览和搜索所有可用技能
-- **OpenClaw Skills 开发文档**：[https://docs.openclaw.io/skills](https://docs.openclaw.io/skills) — Skills 开发与发布完整指南
+- **OpenClaw Skills 开发文档**：[https://docs.OpenClaw.io/skills](https://docs.OpenClaw.io/skills) — Skills 开发与发布完整指南
 - **语义化版本规范**：[https://semver.org/lang/zh-CN/](https://semver.org/lang/zh-CN/) — 版本号命名规范参考
-- **OpenClaw GitHub 组织**：[https://github.com/openclaw-community](https://github.com/openclaw-community) — 社区开源项目与示例
+- **OpenClaw GitHub 组织**：[https://github.com/OpenClaw-community](https://github.com/OpenClaw-community) — 社区开源项目与示例
 
 ---
 
@@ -565,9 +565,9 @@ openclaw chat --skill my-awesome-skill
 
 | 来源 | 链接 | 说明 |
 |------|------|------|
-| OpenClaw 官方文档 | https://docs.openclaw.com | 官方安装与配置手册 |
-| OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
-| ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
+| OpenClaw 官方文档 | https://docs.OpenClaw.ai | 官方安装与配置手册 |
+| OpenClaw GitHub | https://github.com/OpenClaw/OpenClaw | 源码与 Issue 追踪 |
+| ClawHub 平台 | https://hub.OpenClaw.ai | Skills 市场与文档 |
 
 
 ## 本章小结

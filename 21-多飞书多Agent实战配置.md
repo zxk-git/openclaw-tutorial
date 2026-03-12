@@ -591,7 +591,7 @@ openclaw agents  # 确认 Routing 行显示正确的绑定
 - [第 7 章：飞书集成与消息自动化](07-飞书集成与消息自动化.md) — 单飞书 App 配置基础
 - [第 8 章：单 Gateway 多 Agent 配置与管理](08-单 Gateway 多 Agent 配置与管理.md) — 多 Agent 架构理论
 - [飞书开发者文档](https://open.feishu.cn/document/) — App 创建与权限管理
-- [OpenClaw CLI 参考](https://docs.openclaw.ai/cli/channels) — Channels 命令详解
+- [OpenClaw CLI 参考](https://docs.OpenClaw.ai/cli/channels) — Channels 命令详解
 
 ---
 

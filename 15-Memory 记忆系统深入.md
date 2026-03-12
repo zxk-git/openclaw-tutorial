@@ -1051,9 +1051,9 @@ vim ~/.openclaw/workspace/memory/2026-03-06-my-memory.md
 
 | 来源 | 链接 | 说明 |
 |------|------|------|
-| OpenClaw 官方文档 | https://docs.openclaw.com | 官方安装与配置手册 |
-| OpenClaw GitHub | https://github.com/anthropics/openclaw | 源码与 Issue 追踪 |
-| ClawHub 平台 | https://hub.openclaw.com | Skills 市场与文档 |
+| OpenClaw 官方文档 | https://docs.OpenClaw.ai | 官方安装与配置手册 |
+| OpenClaw GitHub | https://github.com/OpenClaw/OpenClaw | 源码与 Issue 追踪 |
+| ClawHub 平台 | https://hub.OpenClaw.ai | Skills 市场与文档 |
 
 
 ## 本章小结

@@ -511,9 +511,9 @@ openclaw agents list --verbose
 
 ## 8.7 外部参考
 
-- [OpenClaw 官方文档 - 多 Agent 管理](https://docs.openclaw.dev/guides/multi-agent)
-- [OpenClaw 官方文档 - Gateway 配置参考](https://docs.openclaw.dev/reference/gateway-config)
-- [OpenClaw GitHub - Agent 路由示例](https://github.com/anthropics/openclaw/tree/main/examples/multi-agent)
+- [OpenClaw 官方文档 - 多 Agent 管理](https://docs.OpenClaw.dev/guides/multi-agent)
+- [OpenClaw 官方文档 - Gateway 配置参考](https://docs.OpenClaw.dev/reference/gateway-config)
+- [OpenClaw GitHub - Agent 路由示例](https://github.com/OpenClaw/OpenClaw/tree/main/examples/multi-agent)
 - [微服务架构中的 Agent 模式（思考参考）](https://martinfowler.com/articles/agent-oriented-architecture.html)
 - [飞书机器人开放平台 - 多机器人管理](https://open.feishu.cn/document/home/multiple-bots)
 
@@ -544,9 +544,9 @@ openclaw agents list --verbose
 
 | 来源 | 链接 | 可信度 | 说明 |
 |------|------|--------|------|
-| OpenClaw 官方文档 | https://docs.openclaw.com | A | 安装, 配置, 命令 |
-| OpenClaw GitHub 仓库 | https://github.com/anthropics/openclaw | A | 源码, Issues, Release |
-| ClawHub Skills 平台 | https://hub.openclaw.com | A | Skills, 市场, 安装 |
+| OpenClaw 官方文档 | https://docs.OpenClaw.ai | A | 安装, 配置, 命令 |
+| OpenClaw GitHub 仓库 | https://github.com/OpenClaw/OpenClaw | A | 源码, Issues, Release |
+| ClawHub Skills 平台 | https://hub.OpenClaw.ai | A | Skills, 市场, 安装 |
 | Docker 官方文档 | https://docs.docker.com | A | Docker, 容器, 部署 |
 | systemd 管理文档 | https://www.freedesktop.org/wiki/Software/systemd/ | A | systemd, 服务管理, 后台运行 |
 
