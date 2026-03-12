@@ -1,0 +1,263 @@
+/* ===== OpenClaw Tutorial — Custom Theme ===== */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bg: #ffffff;
+  --fg: #24292e;
+  --fg-secondary: #586069;
+  --header-bg: linear-gradient(120deg, #155799, #159957);
+  --header-fg: #fff;
+  --link: #0366d6;
+  --border: #e1e4e8;
+  --code-bg: #f6f8fa;
+  --card-bg: #f9f9f9;
+  --search-bg: #fff;
+  --search-shadow: rgba(0,0,0,0.1);
+  --table-stripe: #f6f8fa;
+  --footer-bg: #f6f8fa;
+}
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --fg: #c9d1d9;
+  --fg-secondary: #8b949e;
+  --header-bg: linear-gradient(120deg, #0a2540, #0d4429);
+  --header-fg: #e6edf3;
+  --link: #58a6ff;
+  --border: #30363d;
+  --code-bg: #161b22;
+  --card-bg: #161b22;
+  --search-bg: #161b22;
+  --search-shadow: rgba(0,0,0,0.4);
+  --table-stripe: #161b22;
+  --footer-bg: #161b22;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-fg);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.header-inner { max-width: 800px; margin: 0 auto; }
+
+.project-name {
+  margin: 0 0 0.3rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.project-tagline {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.3rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 0.4rem;
+  color: var(--header-fg);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background: rgba(255,255,255,0.15);
+  text-decoration: none;
+}
+
+/* ---------- Toolbar (Search + Toggle) ---------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  max-width: 800px;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--search-bg);
+  color: var(--fg);
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+#search-input:focus {
+  border-color: var(--link);
+  box-shadow: 0 0 0 3px var(--search-shadow);
+}
+
+#search-results {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  background: var(--search-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px var(--search-shadow);
+  z-index: 100;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.sr-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.sr-item:last-child { border-bottom: none; }
+.sr-item:hover {
+  background: var(--table-stripe);
+  text-decoration: none;
+}
+
+.sr-empty {
+  padding: 0.7rem 1rem;
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+}
+
+#theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  flex-shrink: 0;
+}
+#theme-toggle:hover { transform: scale(1.1); }
+
+/* ---------- Main Content ---------- */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+/* GitHub Markdown Body overrides for dark mode */
+.markdown-body {
+  color: var(--fg) !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] .markdown-body {
+  color-scheme: dark;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3,
+.markdown-body h4, .markdown-body h5, .markdown-body h6 {
+  color: var(--fg) !important;
+  border-bottom-color: var(--border) !important;
+}
+
+.markdown-body code, .markdown-body pre {
+  background: var(--code-bg) !important;
+  color: var(--fg) !important;
+}
+
+.markdown-body pre {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.markdown-body table th,
+.markdown-body table td {
+  border: 1px solid var(--border) !important;
+  padding: 0.5rem 0.75rem;
+}
+.markdown-body table tr:nth-child(2n) {
+  background: var(--table-stripe) !important;
+}
+.markdown-body table th {
+  background: var(--card-bg) !important;
+}
+
+.markdown-body blockquote {
+  border-left: 4px solid var(--link);
+  color: var(--fg-secondary);
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  border-radius: 0.3rem;
+}
+
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* Badge images - no dark inversion */
+.markdown-body img[src*="shields.io"] {
+  filter: none !important;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
+  transition: background 0.3s;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .project-name { font-size: 1.5rem; }
+  .project-tagline { font-size: 0.95rem; }
+  .toolbar { flex-direction: column; }
+  .search-container { max-width: 100%; }
+  .main-content { padding: 1rem 0.8rem 2rem; }
+}
+
+/* ---------- Scroll to Top ---------- */
+.markdown-body h1:first-child {
+  margin-top: 0;
+}

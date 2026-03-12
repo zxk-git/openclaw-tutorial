@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <script>
+    // Apply saved theme ASAP to prevent flash
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="project-name">{{ site.title | default: "OpenClaw 实战教程" }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: "" }}</h2>
+      <a href="{{ '/' | relative_url }}" class="btn">首页</a>
+      <a href="https://github.com/zxk-git/openclaw-tutorial" class="btn">GitHub</a>
+    </div>
+  </header>
+
+  <!-- Search + Theme Toggle -->
+  <div class="toolbar">
+    <div class="search-container" id="search-box">
+      <input type="text" id="search-input" placeholder="🔍 搜索章节..." autocomplete="off" />
+      <div id="search-results"></div>
+    </div>
+    <button id="theme-toggle" title="切换暗色/亮色模式" aria-label="Toggle dark mode">🌙</button>
+  </div>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <div class="markdown-body">
+      {{ content }}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span class="site-footer-credits">
+      Powered by <a href="https://pages.github.com">GitHub Pages</a> &middot;
+      Pipeline v5.5 &middot; 25 章 &middot; 118,612 字 &middot; 全部 100 分
+    </span>
+  </footer>
+
+  <script>
+  // === Dark mode toggle ===
+  (function() {
+    var toggle = document.getElementById('theme-toggle');
+    if (document.documentElement.getAttribute('data-theme') === 'dark') toggle.textContent = '☀️';
+    toggle.addEventListener('click', function() {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        toggle.textContent = '🌙';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggle.textContent = '☀️';
+      }
+    });
+  })();
+
+  // === Chapter search ===
+  (function() {
+    var chapters = [
+      { t: "第一章：OpenClaw 基础介绍与安装", u: "01-基础介绍与安装.html" },
+      { t: "第二章：部署与环境初始化", u: "02-部署与环境初始化.html" },
+      { t: "第 3 章：Skills 插件体系与批量开发", u: "03-Skills 插件体系与批量开发.html" },
+      { t: "第 4 章：Skills 安装与管理实践", u: "04-Skills 安装与管理实践.html" },
+      { t: "第 5 章：ClawHub 平台与技能分发", u: "05-ClawHub 平台与技能分发.html" },
+      { t: "第 6 章：自动化命令与脚本集成", u: "06-自动化命令与脚本集成.html" },
+      { t: "第 7 章：飞书集成与消息自动化", u: "07-飞书集成与消息自动化.html" },
+      { t: "第 8 章：单 Gateway 多 Agent 配置与管理", u: "08-单 Gateway 多 Agent 配置与管理.html" },
+      { t: "第 9 章：故障排查与日志分析", u: "09-故障排查与日志分析.html" },
+      { t: "第 10 章：持续集成与知识库同步", u: "10-持续集成与知识库同步.html" },
+      { t: "第 11 章：高级场景：第三方平台集成", u: "11-高级场景-第三方平台集成.html" },
+      { t: "第 12 章：实践案例与常见问题", u: "12-实践案例与常见问题.html" },
+      { t: "第 13 章：教程自动更新与仓库维护", u: "13-教程自动更新与仓库维护.html" },
+      { t: "第 14 章：安全与权限管理", u: "14-安全与权限管理.html" },
+      { t: "第 15 章：Memory 记忆系统深入", u: "15-Memory 记忆系统深入.html" },
+      { t: "第 16 章：MCP 工具协议与自定义集成", u: "16-MCP 工具协议与自定义集成.html" },
+      { t: "第 17 章：浏览器自动化与网页交互", u: "17-浏览器自动化与网页交互.html" },
+      { t: "第 18 章：性能优化与规模化部署", u: "18-性能优化与规模化部署.html" },
+      { t: "第 19 章：团队协作与企业部署", u: "19-团队协作与企业部署.html" },
+      { t: "第 20 章：OpenClaw 生态与未来展望", u: "20-OpenClaw 生态与未来展望.html" },
+      { t: "第 21 章：多飞书多 Agent 实战配置", u: "21-多飞书多Agent实战配置.html" },
+      { t: "第 22 章：Canvas 可视化交互", u: "22-Canvas 可视化交互.html" },
+      { t: "第 23 章：Agent 人格与行为设计", u: "23-Agent 人格与行为设计.html" },
+      { t: "第 24 章：多模态与媒体处理", u: "24-多模态与媒体处理.html" },
+      { t: "第 25 章：进阶开发实践", u: "25-进阶开发实践.html" }
+    ];
+    var input = document.getElementById('search-input');
+    var box = document.getElementById('search-results');
+    input.addEventListener('input', function() {
+      var q = this.value.trim().toLowerCase();
+      box.innerHTML = '';
+      if (!q) { box.style.display = 'none'; return; }
+      var hits = chapters.filter(function(c){ return c.t.toLowerCase().indexOf(q) !== -1; });
+      if (!hits.length) {
+        box.innerHTML = '<div class="sr-empty">没有匹配的章节</div>';
+      } else {
+        hits.forEach(function(c){
+          var a = document.createElement('a');
+          a.href = c.u; a.textContent = c.t; a.className = 'sr-item';
+          box.appendChild(a);
+        });
+      }
+      box.style.display = 'block';
+    });
+    document.addEventListener('click', function(e){
+      if (!document.getElementById('search-box').contains(e.target)) box.style.display = 'none';
+    });
+  })();
+  </script>
+</body>
+</html>
